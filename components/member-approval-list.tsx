@@ -81,7 +81,7 @@ export default function MemberApprovalList({ pendingMembers }: MemberApprovalLis
           <div className="flex items-center gap-4 flex-1 min-w-0">
             <Avatar className="h-12 w-12 shrink-0">
               <AvatarImage src={member.avatar_url || ""} alt={member.full_name} className="object-cover" />
-              <AvatarFallback className="bg-[#FFD700] text-black">
+              <AvatarFallback className="bg-primary text-black">
                 {member.full_name
                   .split(" ")
                   .map((n: string) => n[0])

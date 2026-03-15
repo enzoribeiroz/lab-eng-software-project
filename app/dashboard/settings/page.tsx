@@ -1,6 +1,7 @@
 "use client"
 
 import { useTheme } from "next-themes"
+import { siteConfig } from "@/lib/site-config"
 import { useEffect, useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
@@ -30,10 +31,10 @@ export default function SettingsPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-4xl font-bold mb-2">Configurações</h1>
-        <p className="text-muted-foreground">Personalize sua experiência no IFL Jovem SP</p>
+        <p className="text-muted-foreground">Personalize sua experiência em {siteConfig.siteName}</p>
       </div>
 
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground">Aparência</CardTitle>
           <CardDescription className="text-muted-foreground">

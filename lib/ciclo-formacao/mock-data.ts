@@ -9,13 +9,13 @@ export const MOCK_DEVELOPMENT_LEVELS: DevelopmentLevel[] = [
     id: "level-qualify",
     slug: "qualify",
     name: "Qualify",
-    description: "Etapa inicial de formação - conhecendo o IFL e seus valores",
+    description: "Etapa inicial de formação - conhecendo a organização e seus valores",
     orderIndex: 0,
     tasks: [
       {
         id: "task-q-1",
         title: "Assistir ao vídeo de boas-vindas",
-        description: "Conheça a história e missão do IFL Jovem",
+        description: "Conheça a história e missão da organização",
         taskType: "link",
         contentUrl: "https://www.youtube.com/watch?v=example",
         orderIndex: 0,
@@ -25,7 +25,7 @@ export const MOCK_DEVELOPMENT_LEVELS: DevelopmentLevel[] = [
         title: "Leitura do estatuto",
         description: "Leia o estatuto do instituto (PDF)",
         taskType: "file",
-        contentUrl: "/documents/estatuto-ifl.pdf",
+        contentUrl: "/documents/estatuto.pdf",
         orderIndex: 1,
       },
       {
@@ -138,7 +138,7 @@ export const MOCK_DEVELOPMENT_LEVELS: DevelopmentLevel[] = [
       {
         id: "task-as-1",
         title: "Guia de Mentoria",
-        description: "Metodologia oficial de mentoria IFL",
+        description: "Metodologia oficial de mentoria",
         taskType: "file",
         contentUrl: "/documents/guia-mentoria.pdf",
         orderIndex: 0,
@@ -148,7 +148,7 @@ export const MOCK_DEVELOPMENT_LEVELS: DevelopmentLevel[] = [
         title: "Plataforma de estratégia",
         description: "Ferramentas de planejamento estratégico",
         taskType: "link",
-        contentUrl: "https://strategy.ifl.org",
+        contentUrl: "#",
         orderIndex: 1,
       },
       {

@@ -85,7 +85,7 @@ export default async function AdminCicloFormacaoPage() {
         {tasksByLevel.map((level: any) => (
           <Card
             key={level.id}
-            className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20"
+            className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20"
           >
             <CardHeader className="pb-4">
               <div className="flex items-center justify-between">

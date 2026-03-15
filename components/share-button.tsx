@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { siteConfig } from "@/lib/site-config"
 import { Share2, Copy, Check, Facebook, Twitter, Linkedin, MessageCircle, Instagram } from "lucide-react"
 import { toast } from "sonner"
 
@@ -62,7 +63,7 @@ export function ShareButton({ eventTitle, eventUrl }: ShareButtonProps) {
             shareUrl = `https://wa.me/?text=${encodedText}%20${encodedUrl}`
             break
         case "instagram":
-            shareUrl = `https://www.instagram.com/ifljovemsp/`
+            shareUrl = siteConfig.socialLinks.find((s) => s.label.toLowerCase() === "instagram")?.href || eventUrl
             break
         }
     
@@ -76,7 +77,7 @@ export function ShareButton({ eventTitle, eventUrl }: ShareButtonProps) {
       {/* Copy Link Button */}
       <Button
         onClick={handleCopyLink}
-        className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90"
+        className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
       >
         {copied ? (
           <>
@@ -96,7 +97,7 @@ export function ShareButton({ eventTitle, eventUrl }: ShareButtonProps) {
         <Button
           onClick={handleNativeShare}
           variant="outline"
-          className="w-full border-[#FFD700]/40 text-[#FFD700] bg-transparent hover:bg-[#FFD700]/10"
+          className="w-full border-primary/40 text-primary bg-transparent hover:bg-primary/10"
         >
           <Share2 className="mr-2 h-4 w-4" />
           Compartilhar

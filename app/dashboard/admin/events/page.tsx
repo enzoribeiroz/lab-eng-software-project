@@ -45,7 +45,7 @@ export default async function AdminEventsPage() {
           <h1 className="text-4xl font-bold text-foreground mb-2">Gerenciar Eventos</h1>
           <p className="text-muted-foreground">Criar e gerenciar eventos da organização</p>
         </div>
-        <Button asChild className="bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+        <Button asChild className="bg-primary text-black hover:bg-primary/90">
           <Link href="/dashboard/admin/events/create">
             <Plus className="mr-2 h-4 w-4" />
             Criar Evento
@@ -56,7 +56,7 @@ export default async function AdminEventsPage() {
       <div className="space-y-4">
         {allEvents && allEvents.length > 0 ? (
           allEvents.map((event) => (
-            <Card key={event.id} className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+            <Card key={event.id} className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
               <CardContent className="py-4">
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
@@ -95,7 +95,7 @@ export default async function AdminEventsPage() {
                       asChild
                       size="sm"
                       variant="outline"
-                      className="border-[#FFD700]/40 text-primary bg-transparent"
+                      className="border-primary/40 text-primary bg-transparent"
                     >
                       <Link href={`/dashboard/admin/events/${event.id}/edit`}>Editar</Link>
                     </Button>
@@ -110,7 +110,7 @@ export default async function AdminEventsPage() {
                         Compartilhar
                       </Link>
                     </Button>
-                    <Button asChild size="sm" className="bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+                    <Button asChild size="sm" className="bg-primary text-black hover:bg-primary/90">
                       <Link href={`/dashboard/admin/attendance?event=${event.id}`}>Presenças</Link>
                     </Button>
                   </div>
@@ -119,10 +119,10 @@ export default async function AdminEventsPage() {
             </Card>
           ))
         ) : (
-          <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+          <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
             <CardContent className="py-12 text-center">
               <p className="text-muted-foreground mb-4">Nenhum evento criado ainda.</p>
-              <Button asChild className="bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+              <Button asChild className="bg-primary text-black hover:bg-primary/90">
                 <Link href="/dashboard/admin/events/create">
                   <Plus className="mr-2 h-4 w-4" />
                   Criar Primeiro Evento

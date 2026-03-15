@@ -27,9 +27,20 @@ import {
 } from "@/components/ui/sidebar"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
-import { Home, Calendar, Trophy, Users, Settings, LogOut, GraduationCap, Briefcase, ChevronDown } from "lucide-react"
+import { Home, Calendar, Trophy, Users, Settings, LogOut, GraduationCap, Briefcase, ChevronDown, type LucideIcon } from "lucide-react"
 import { Logo } from "@/components/logo"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { siteConfig } from "@/lib/site-config"
+
+const iconMap: Record<string, LucideIcon> = {
+  Home,
+  Calendar,
+  Trophy,
+  Users,
+  GraduationCap,
+  Briefcase,
+  Settings,
+}
 
 interface DashboardSidebarProps {
   user: {
@@ -52,14 +63,10 @@ export function DashboardSidebar({ user, children }: DashboardSidebarProps) {
     router.refresh()
   }
 
-  const navItems = [
-    { href: "/dashboard", label: "Início", icon: Home },
-    { href: "/dashboard/events", label: "Eventos", icon: Calendar },
-    { href: "/dashboard/ranking", label: "Ranking", icon: Trophy },
-    { href: "/dashboard/ciclo-formacao", label: "Ciclo de Formação", icon: GraduationCap },
-    { href: "/dashboard/opportunities", label: "Oportunidades", icon: Briefcase },
-    { href: "/dashboard/members", label: "Membros", icon: Users },
-  ]
+  const navItems = siteConfig.menuLinks.map((item) => ({
+    ...item,
+    icon: iconMap[item.icon] ?? Home,
+  }))
 
   const isAdmin = ["presidente", "vice_presidente", "diretor"].includes(user.role)
 
@@ -121,7 +128,7 @@ export function DashboardSidebar({ user, children }: DashboardSidebarProps) {
               >
                 <Avatar className="h-8 w-8 shrink-0">
                   <AvatarImage src={user.avatar_url || ""} alt={user.full_name} className="object-cover" />
-                  <AvatarFallback className="bg-[#FFD700] text-black text-xs">
+                  <AvatarFallback className="bg-primary text-primary-foreground text-xs">
                     {user.full_name
                       .split(" ")
                       .map((n) => n[0])

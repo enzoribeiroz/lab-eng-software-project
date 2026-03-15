@@ -132,7 +132,7 @@ export default function EditActivityForm({ activity, userId }: EditActivityFormP
         >
           Cancelar
         </Button>
-        <Button type="submit" disabled={loading} className="flex-1 bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+        <Button type="submit" disabled={loading} className="flex-1 bg-primary text-black hover:bg-primary/90">
           {loading ? "Atualizando..." : "Atualizar Atividade"}
         </Button>
       </div>

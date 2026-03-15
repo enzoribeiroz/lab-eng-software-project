@@ -41,10 +41,10 @@ export function GoogleCalendarInvite({
 
   if (!calendarUrl) {
     return (
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground flex items-center gap-2">
-            <Calendar className="h-5 w-5 text-[#FFD700]" />
+            <Calendar className="h-5 w-5 text-primary" />
             Google Calendar Invitation
           </CardTitle>
           <CardDescription className="text-muted-foreground">
@@ -77,10 +77,10 @@ export function GoogleCalendarInvite({
   }
 
   return (
-    <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+    <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
       <CardHeader>
         <CardTitle className="text-foreground flex items-center gap-2">
-          <Calendar className="h-5 w-5 text-[#FFD700]" />
+          <Calendar className="h-5 w-5 text-primary" />
           Google Calendar Invitation
         </CardTitle>
         <CardDescription className="text-muted-foreground">
@@ -125,7 +125,7 @@ export function GoogleCalendarInvite({
           <div className="flex gap-2">
             <Button
               onClick={handleOpenCalendar}
-              className="flex-1 bg-[#FFD700] text-black hover:bg-[#FFD700]/90"
+              className="flex-1 bg-primary text-black hover:bg-primary/90"
             >
               <ExternalLink className="h-4 w-4 mr-2" />
               Open Google Calendar

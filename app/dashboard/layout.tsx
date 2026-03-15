@@ -61,7 +61,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
     console.log("[v0] Rendering dashboard with profile:", profile)
 
     return (
-      <div className="min-h-screen bg-background dark:bg-gradient-to-br dark:from-[#001f3f] dark:via-[#003366] dark:to-black">
+      <div className="min-h-screen bg-background dark:bg-gradient-to-br dark:from-[var(--brand-secondary)] dark:via-[var(--brand-tertiary)] dark:to-[var(--brand-gradient-end)]">
         <DashboardSidebar
           user={{
             email: user.email!,

@@ -98,7 +98,7 @@ export default async function CicloFormacaoPage() {
             <Card
               key={level.id}
               className={cn(
-                "bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20",
+                "bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20",
                 isCurrentLevel && "ring-2 ring-primary/30"
               )}
             >

@@ -37,7 +37,7 @@ export default async function DashboardPage() {
   const { data: userAttendance } = await supabase
     .from("event_attendance")
     .select("*, events(*)")
-    .eq("user_id", user.id)
+    .eq("member_id", user.id)
     .eq("attended", true)
 
   const { data: topMembers } = await supabase
@@ -98,7 +98,7 @@ export default async function DashboardPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-foreground">Pontos Totais</CardTitle>
             <Trophy className="h-4 w-4 text-primary" />
@@ -109,7 +109,7 @@ export default async function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-foreground">Eventos Participados</CardTitle>
             <Calendar className="h-4 w-4 text-primary" />
@@ -120,7 +120,7 @@ export default async function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-foreground">Próximos Eventos</CardTitle>
             <TrendingUp className="h-4 w-4 text-primary" />
@@ -131,7 +131,7 @@ export default async function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-foreground">Membros Ativos</CardTitle>
             <Users className="h-4 w-4 text-primary" />
@@ -144,7 +144,7 @@ export default async function DashboardPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader>
             <CardTitle className="text-foreground">Próximos Eventos</CardTitle>
             <CardDescription className="text-muted-foreground">Eventos que você pode participar</CardDescription>
@@ -179,7 +179,7 @@ export default async function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader>
             <CardTitle className="text-foreground">Top 5 Membros</CardTitle>
             <CardDescription className="text-muted-foreground">Ranking por pontuação</CardDescription>

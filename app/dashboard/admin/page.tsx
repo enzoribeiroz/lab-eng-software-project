@@ -48,10 +48,10 @@ export default async function AdminPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-foreground">Total de Eventos</CardTitle>
-            <Calendar className="h-4 w-4 text-[#FFD700]" />
+            <Calendar className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
             <div className="text-3xl font-bold text-foreground">{totalEvents?.length || 0}</div>
@@ -59,21 +59,21 @@ export default async function AdminPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-foreground">Próximos Eventos</CardTitle>
-            <Calendar className="h-4 w-4 text-[#FFD700]" />
+            <Calendar className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-[#FFD700]">{upcomingEvents?.length || 0}</div>
+            <div className="text-3xl font-bold text-primary">{upcomingEvents?.length || 0}</div>
             <p className="text-xs text-muted-foreground mt-1">Agendados</p>
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-foreground">Total de Membros</CardTitle>
-            <Users className="h-4 w-4 text-[#FFD700]" />
+            <Users className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
             <div className="text-3xl font-bold text-foreground">{totalMembers?.length || 0}</div>
@@ -81,10 +81,10 @@ export default async function AdminPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-foreground">Presenças (7 dias)</CardTitle>
-            <Activity className="h-4 w-4 text-[#FFD700]" />
+            <Activity className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
             <div className="text-3xl font-bold text-foreground">{recentAttendance?.length || 0}</div>
@@ -94,16 +94,16 @@ export default async function AdminPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20 hover:border-primary/40 transition-colors">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20 hover:border-primary/40 transition-colors">
           <CardHeader>
             <CardTitle className="text-foreground flex items-center gap-2">
-              <Calendar className="h-5 w-5 text-[#FFD700]" />
+              <Calendar className="h-5 w-5 text-primary" />
               Gerenciar Eventos
             </CardTitle>
             <CardDescription className="text-muted-foreground">Criar, editar e gerenciar eventos</CardDescription>
           </CardHeader>
           <CardContent>
-            <Button asChild className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+            <Button asChild className="w-full bg-primary text-black hover:bg-primary/90">
               <Link href="/dashboard/admin/events">
                 <Plus className="mr-2 h-4 w-4" />
                 Acessar Eventos
@@ -112,23 +112,23 @@ export default async function AdminPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20 hover:border-primary/40 transition-colors">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20 hover:border-primary/40 transition-colors">
           <CardHeader>
             <CardTitle className="text-foreground flex items-center gap-2">
-              <UserCheck className="h-5 w-5 text-[#FFD700]" />
+              <UserCheck className="h-5 w-5 text-primary" />
               Aprovar Membros
             </CardTitle>
             <CardDescription className="text-muted-foreground">
               Aprovar novos cadastros para acesso ao painel
               {(pendingMembers?.length ?? 0) > 0 && (
-                <span className="block mt-1 font-medium text-[#FFD700]">
+                <span className="block mt-1 font-medium text-primary">
                   {(pendingMembers?.length ?? 0)} pendente(s)
                 </span>
               )}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Button asChild className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+            <Button asChild className="w-full bg-primary text-black hover:bg-primary/90">
               <Link href="/dashboard/admin/approve-members">
                 <UserCheck className="mr-2 h-4 w-4" />
                 Aprovar Membros
@@ -137,16 +137,16 @@ export default async function AdminPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20 hover:border-primary/40 transition-colors">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20 hover:border-primary/40 transition-colors">
           <CardHeader>
             <CardTitle className="text-foreground flex items-center gap-2">
-              <Users className="h-5 w-5 text-[#FFD700]" />
+              <Users className="h-5 w-5 text-primary" />
               Gerenciar Membros
             </CardTitle>
             <CardDescription className="text-muted-foreground">Atualizar funções e informações</CardDescription>
           </CardHeader>
           <CardContent>
-            <Button asChild className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+            <Button asChild className="w-full bg-primary text-black hover:bg-primary/90">
               <Link href="/dashboard/admin/members">
                 <Plus className="mr-2 h-4 w-4" />
                 Acessar Membros
@@ -155,16 +155,16 @@ export default async function AdminPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20 hover:border-primary/40 transition-colors">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20 hover:border-primary/40 transition-colors">
           <CardHeader>
             <CardTitle className="text-foreground flex items-center gap-2">
-              <Activity className="h-5 w-5 text-[#FFD700]" />
+              <Activity className="h-5 w-5 text-primary" />
               Marcar Presenças
             </CardTitle>
             <CardDescription className="text-muted-foreground">Registrar presença em eventos</CardDescription>
           </CardHeader>
           <CardContent>
-            <Button asChild className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+            <Button asChild className="w-full bg-primary text-black hover:bg-primary/90">
               <Link href="/dashboard/admin/attendance">
                 <Plus className="mr-2 h-4 w-4" />
                 Acessar Presenças
@@ -173,16 +173,16 @@ export default async function AdminPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20 hover:border-primary/40 transition-colors">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20 hover:border-primary/40 transition-colors">
           <CardHeader>
             <CardTitle className="text-foreground flex items-center gap-2">
-              <GraduationCap className="h-5 w-5 text-[#FFD700]" />
+              <GraduationCap className="h-5 w-5 text-primary" />
               Ciclo de Formação
             </CardTitle>
             <CardDescription className="text-muted-foreground">Criar tarefas por nível de desenvolvimento</CardDescription>
           </CardHeader>
           <CardContent>
-            <Button asChild className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+            <Button asChild className="w-full bg-primary text-black hover:bg-primary/90">
               <Link href="/dashboard/admin/ciclo-formacao">
                 <Plus className="mr-2 h-4 w-4" />
                 Acessar Ciclo
@@ -191,16 +191,16 @@ export default async function AdminPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20 hover:border-primary/40 transition-colors">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20 hover:border-primary/40 transition-colors">
           <CardHeader>
             <CardTitle className="text-foreground flex items-center gap-2">
-              <Activity className="h-5 w-5 text-[#FFD700]" />
+              <Activity className="h-5 w-5 text-primary" />
               Gerenciar Atividades
             </CardTitle>
             <CardDescription className="text-muted-foreground">Criar atividades e aprovar submissões</CardDescription>
           </CardHeader>
           <CardContent>
-            <Button asChild className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+            <Button asChild className="w-full bg-primary text-black hover:bg-primary/90">
               <Link href="/dashboard/admin/activities">
                 <Plus className="mr-2 h-4 w-4" />
                 Acessar Atividades
@@ -209,10 +209,10 @@ export default async function AdminPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20 hover:border-primary/40 transition-colors">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20 hover:border-primary/40 transition-colors">
           <CardHeader>
             <CardTitle className="text-foreground flex items-center gap-2">
-              <Briefcase className="h-5 w-5 text-[#FFD700]" />
+              <Briefcase className="h-5 w-5 text-primary" />
               Oportunidades
             </CardTitle>
             <CardDescription className="text-muted-foreground">
@@ -220,7 +220,7 @@ export default async function AdminPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Button asChild className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+            <Button asChild className="w-full bg-primary text-black hover:bg-primary/90">
               <Link href="/dashboard/admin/opportunities">
                 <Plus className="mr-2 h-4 w-4" />
                 Gerenciar Oportunidades

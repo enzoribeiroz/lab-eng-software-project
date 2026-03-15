@@ -50,10 +50,10 @@ const markdownComponents = {
     <strong className={cn("font-semibold text-white", className)} {...props} />
   ),
   blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLQuoteElement>) => (
-    <blockquote className={cn("border-l-4 border-[#FFD700] pl-4 italic text-white/80", className)} {...props} />
+    <blockquote className={cn("border-l-4 border-primary pl-4 italic text-white/80", className)} {...props} />
   ),
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-    <code className={cn("rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm text-[#FFD700]", className)} {...props} />
+    <code className={cn("rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm text-primary", className)} {...props} />
   ),
   pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
     <pre className={cn("mb-4 overflow-x-auto rounded-lg border border-white/10 bg-black/30 p-4 text-sm text-white/90", className)} {...props} />

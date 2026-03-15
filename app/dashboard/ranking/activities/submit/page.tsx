@@ -26,7 +26,7 @@ export default async function SubmitActivityPage() {
         <p className="text-muted-foreground">Registre suas atividades de engajamento para ganhar pontos</p>
       </div>
 
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground">Formulário de Submissão</CardTitle>
           <CardDescription className="text-muted-foreground">

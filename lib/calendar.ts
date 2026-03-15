@@ -59,9 +59,9 @@ export class CalendarService {
     return [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//IFL Jovem SP//Event Calendar//EN',
+      'PRODID:-//Portal//Event Calendar//EN',
       'BEGIN:VEVENT',
-      `UID:${Date.now()}@ifl-jovem-sp.com`,
+      `UID:${Date.now()}@portal`,
       `DTSTART:${formatDate(event.startDate)}`,
       `DTEND:${formatDate(event.endDate)}`,
       `SUMMARY:${event.title}`,

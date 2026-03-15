@@ -75,7 +75,7 @@ export default async function RankingPage() {
             <h1 className="text-4xl font-bold text-foreground mb-2">Ranking</h1>
             <p className="text-muted-foreground">Classificação por participação e engajamento</p>
           </div>
-          <Button asChild className="bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+          <Button asChild className="bg-primary text-black hover:bg-primary/90">
             <Link href="/dashboard/ranking/activities">
               <Activity className="mr-2 h-4 w-4" />
               Minhas Atividades
@@ -85,7 +85,7 @@ export default async function RankingPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-foreground">Sua Posição</CardTitle>
             <TrendingUp className="h-4 w-4 text-primary" />
@@ -96,7 +96,7 @@ export default async function RankingPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-foreground">Seus Pontos</CardTitle>
             <Trophy className="h-4 w-4 text-primary" />
@@ -107,7 +107,7 @@ export default async function RankingPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-foreground">Diferença para o 1º</CardTitle>
             <Award className="h-4 w-4 text-primary" />
@@ -171,7 +171,7 @@ export default async function RankingPage() {
 
         <div>
           <h2 className="text-2xl font-bold text-foreground mb-4">Classificação Geral</h2>
-          <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+          <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
             <CardContent className="p-0">
               <div className="divide-y divide-border">
                 {restOfMembers.map((member, index) => {
@@ -189,7 +189,7 @@ export default async function RankingPage() {
 
                         <Avatar className="h-12 w-12">
                           <AvatarImage src={member.avatar_url || ""} alt={member.full_name} className="object-cover" />
-                          <AvatarFallback className="bg-[#FFD700] text-black">
+                          <AvatarFallback className="bg-primary text-black">
                             {member.full_name
                               .split(" ")
                               .map((n: any) => n[0])

@@ -78,7 +78,7 @@ export default async function AdminActivitiesPage() {
           <h1 className="text-4xl font-bold text-foreground mb-2">Gerenciar Atividades</h1>
           <p className="text-muted-foreground">Crie atividades e aprove submissões dos membros</p>
         </div>
-        <Button asChild className="bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+        <Button asChild className="bg-primary text-black hover:bg-primary/90">
           <Link href="/dashboard/admin/activities/create">
             <Plus className="mr-2 h-4 w-4" />
             Criar Atividade
@@ -87,7 +87,7 @@ export default async function AdminActivitiesPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader>
             <CardTitle className="text-foreground">Total de Atividades</CardTitle>
           </CardHeader>
@@ -96,7 +96,7 @@ export default async function AdminActivitiesPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader>
             <CardTitle className="text-foreground">Pendentes</CardTitle>
           </CardHeader>
@@ -105,7 +105,7 @@ export default async function AdminActivitiesPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader>
             <CardTitle className="text-foreground">Aprovadas</CardTitle>
           </CardHeader>
@@ -115,7 +115,7 @@ export default async function AdminActivitiesPage() {
         </Card>
       </div>
 
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground">Submissões Pendentes</CardTitle>
           <CardDescription className="text-muted-foreground">
@@ -127,7 +127,7 @@ export default async function AdminActivitiesPage() {
         </CardContent>
       </Card>
 
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground">Atividades Disponíveis</CardTitle>
           <CardDescription className="text-muted-foreground">Todas as atividades criadas</CardDescription>
@@ -136,7 +136,7 @@ export default async function AdminActivitiesPage() {
           {!activities || activities.length === 0 ? (
             <div className="text-center py-8">
               <p className="text-muted-foreground mb-4">Nenhuma atividade criada ainda</p>
-              <Button asChild className="bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+              <Button asChild className="bg-primary text-black hover:bg-primary/90">
                 <Link href="/dashboard/admin/activities/create">
                   <Plus className="mr-2 h-4 w-4" />
                   Criar Primeira Atividade
@@ -156,7 +156,7 @@ export default async function AdminActivitiesPage() {
                           Tipo: <span className="text-foreground">{activity.activity_type}</span>
                         </span>
                         <span className="text-muted-foreground">
-                          Pontos: <span className="text-[#FFD700]">{activity.points_value}</span>
+                          Pontos: <span className="text-primary">{activity.points_value}</span>
                         </span>
                       </div>
                     </div>

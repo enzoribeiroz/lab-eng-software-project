@@ -3,6 +3,8 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono, Libre_Baskerville } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
+import { BrandStyles } from "@/components/brand-styles"
+import { siteConfig } from "@/lib/site-config"
 import "./globals.css"
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
@@ -14,14 +16,8 @@ const libreBaskerville = Libre_Baskerville({
 })
 
 export const metadata: Metadata = {
-  title: "IFL Jovem SP",
-  description: "Instituto de Formação de Líderes - Jovem São Paulo",
-  icons: {
-    icon: [
-      { url: "/logo-light.png", media: "(prefers-color-scheme: light)" },
-      { url: "/logo-dark.png", media: "(prefers-color-scheme: dark)" },
-    ],
-  },
+  title: siteConfig.siteName,
+  description: siteConfig.siteDescription,
 }
 
 export default function RootLayout({
@@ -32,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={`${geist.variable} ${geistMono.variable} ${libreBaskerville.variable} font-sans antialiased`}>
+        <BrandStyles />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
           <Analytics />

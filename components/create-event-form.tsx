@@ -216,7 +216,7 @@ export function CreateEventForm({ userId }: CreateEventFormProps) {
           type="file"
           accept="image/*"
           onChange={handleImageChange}
-          className="bg-input border-border text-foreground file:bg-[#FFD700] file:text-black file:border-0 file:rounded file:px-4 file:py-2 file:mr-4"
+          className="bg-input border-border text-foreground file:bg-primary file:text-black file:border-0 file:rounded file:px-4 file:py-2 file:mr-4"
         />
         {imagePreview && (
           <div className="mt-2">
@@ -310,7 +310,7 @@ export function CreateEventForm({ userId }: CreateEventFormProps) {
         >
           Cancelar
         </Button>
-        <Button type="submit" disabled={loading} className="flex-1 bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+        <Button type="submit" disabled={loading} className="flex-1 bg-primary text-black hover:bg-primary/90">
           {loading ? "Criando..." : "Criar Evento"}
         </Button>
       </div>

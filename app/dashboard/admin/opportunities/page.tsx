@@ -35,7 +35,7 @@ export default async function AdminOpportunitiesPage() {
           <h1 className="text-4xl font-bold text-foreground mb-2">Oportunidades</h1>
           <p className="text-muted-foreground">Gerencie oportunidades que o instituto oferece aos membros</p>
         </div>
-        <Button asChild className="bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+        <Button asChild className="bg-primary text-black hover:bg-primary/90">
           <Link href="/dashboard/admin/opportunities/create">
             <Plus className="mr-2 h-4 w-4" />
             Criar Oportunidade
@@ -44,7 +44,7 @@ export default async function AdminOpportunitiesPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader>
             <CardTitle className="text-foreground">Total de Oportunidades</CardTitle>
           </CardHeader>
@@ -53,20 +53,20 @@ export default async function AdminOpportunitiesPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader>
             <CardTitle className="text-foreground">Oportunidades Ativas</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-[#FFD700]">{activeCount}</div>
+            <div className="text-3xl font-bold text-primary">{activeCount}</div>
           </CardContent>
         </Card>
       </div>
 
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground flex items-center gap-2">
-            <Briefcase className="h-5 w-5 text-[#FFD700]" />
+            <Briefcase className="h-5 w-5 text-primary" />
             Oportunidades Cadastradas
           </CardTitle>
           <CardDescription className="text-muted-foreground">
@@ -78,7 +78,7 @@ export default async function AdminOpportunitiesPage() {
             <div className="text-center py-12">
               <Briefcase className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
               <p className="text-muted-foreground mb-4">Nenhuma oportunidade cadastrada ainda</p>
-              <Button asChild className="bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+              <Button asChild className="bg-primary text-black hover:bg-primary/90">
                 <Link href="/dashboard/admin/opportunities/create">
                   <Plus className="mr-2 h-4 w-4" />
                   Criar Primeira Oportunidade
@@ -103,7 +103,7 @@ export default async function AdminOpportunitiesPage() {
                             Inativa
                           </span>
                         )}
-                        <span className="text-xs px-2 py-0.5 rounded bg-[#FFD700]/20 text-[#FFD700]">
+                        <span className="text-xs px-2 py-0.5 rounded bg-primary/20 text-primary">
                           {opp.opportunity_type}
                         </span>
                       </div>

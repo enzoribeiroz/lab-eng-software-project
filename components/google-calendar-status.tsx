@@ -84,10 +84,10 @@ export function GoogleCalendarStatus({
 
   if (!hasGoogleCalendarIntegration) {
     return (
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground flex items-center gap-2">
-            <Calendar className="h-5 w-5 text-[#FFD700]" />
+            <Calendar className="h-5 w-5 text-primary" />
             Google Calendar Integration
           </CardTitle>
           <CardDescription className="text-muted-foreground">
@@ -108,7 +108,7 @@ export function GoogleCalendarStatus({
             <Button
               onClick={handleCreateCalendarEvent}
               disabled={loading}
-              className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90"
+              className="w-full bg-primary text-black hover:bg-primary/90"
             >
               {loading ? "Creating..." : "Create Google Calendar Event"}
             </Button>
@@ -131,10 +131,10 @@ export function GoogleCalendarStatus({
   }
 
   return (
-    <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+    <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
       <CardHeader>
         <CardTitle className="text-foreground flex items-center gap-2">
-          <Calendar className="h-5 w-5 text-[#FFD700]" />
+          <Calendar className="h-5 w-5 text-primary" />
           Google Calendar Integration
         </CardTitle>
         <CardDescription className="text-muted-foreground">

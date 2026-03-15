@@ -13,6 +13,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState, useRef } from "react"
 import { Logo } from "@/components/logo"
+import { siteConfig } from "@/lib/site-config"
 import { formatPhoneInput, normalizePhoneForStorage } from "@/lib/phone"
 import { Upload, User, Linkedin, Instagram, Phone, FileText } from "lucide-react"
 
@@ -143,16 +144,16 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[#001f3f] via-[#003366] to-black p-6">
+    <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[var(--brand-secondary)] via-[var(--brand-tertiary)] to-[var(--brand-gradient-end)] p-6">
       <div className="w-full max-w-2xl">
         <div className="mb-8 text-center">
           <Logo size="lg" showText={true} className="justify-center" href="" />
         </div>
 
-        <Card className="border-[#FFD700]/20">
+        <Card className="border-primary/20">
           <CardHeader>
             <CardTitle className="text-2xl">Criar Conta</CardTitle>
-            <CardDescription>Preencha todos os dados para se juntar ao IFL Jovem SP</CardDescription>
+            <CardDescription>Preencha todos os dados para se cadastrar em {siteConfig.siteName}</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSignUp}>
@@ -165,7 +166,7 @@ export default function SignUpPage() {
                     <div className="relative">
                       <Avatar className="h-24 w-24">
                         <AvatarImage src={avatarPreview} alt="Preview" className="object-cover" />
-                        <AvatarFallback className="bg-[#FFD700] text-black text-2xl">
+                        <AvatarFallback className="bg-primary text-primary-foreground text-2xl">
                           <User className="h-8 w-8" />
                         </AvatarFallback>
                       </Avatar>
@@ -173,7 +174,7 @@ export default function SignUpPage() {
                         type="button"
                         size="sm"
                         variant="outline"
-                        className="absolute -bottom-2 -right-2 h-8 w-8 rounded-full border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700]/10"
+                        className="absolute -bottom-2 -right-2 h-8 w-8 rounded-full border-primary text-primary hover:bg-primary/10"
                         onClick={() => fileInputRef.current?.click()}
                       >
                         <Upload className="h-4 w-4" />
@@ -329,7 +330,7 @@ export default function SignUpPage() {
               <div className="mt-6">
                 <Button
                   type="submit"
-                  className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90"
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
                   disabled={isLoading}
                 >
                   {isLoading ? "Criando conta..." : "Criar Conta"}
@@ -340,7 +341,7 @@ export default function SignUpPage() {
                 Já tem uma conta?{" "}
                 <Link
                   href="/auth/login"
-                  className="text-[#FFD700] underline underline-offset-4 hover:text-[#FFD700]/80"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
                 >
                   Entrar
                 </Link>

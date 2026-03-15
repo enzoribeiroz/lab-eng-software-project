@@ -13,8 +13,19 @@ import {
 } from "@/components/ui/dropdown-menu"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
-import { Home, Calendar, Trophy, Users, Settings, LogOut, Activity, Menu, X, Briefcase } from "lucide-react"
+import { Home, Calendar, Trophy, Users, Settings, LogOut, Menu, X, Briefcase, GraduationCap, type LucideIcon } from "lucide-react"
 import { Logo } from "@/components/logo"
+import { siteConfig } from "@/lib/site-config"
+
+const iconMap: Record<string, LucideIcon> = {
+  Home,
+  Calendar,
+  Trophy,
+  Users,
+  GraduationCap,
+  Briefcase,
+  Settings,
+}
 import { useState } from "react"
 
 interface DashboardNavProps {
@@ -44,18 +55,15 @@ export function DashboardNav({ user }: DashboardNavProps) {
     router.refresh()
   }
 
-  const navItems = [
-    { href: "/dashboard", label: "Início", icon: Home },
-    { href: "/dashboard/events", label: "Eventos", icon: Calendar },
-    { href: "/dashboard/ranking", label: "Ranking", icon: Trophy },
-    { href: "/dashboard/opportunities", label: "Oportunidades", icon: Briefcase },
-    { href: "/dashboard/members", label: "Membros", icon: Users },
-  ]
+  const navItems = siteConfig.menuLinks.map((item) => ({
+    ...item,
+    icon: iconMap[item.icon] ?? Home,
+  }))
 
   const isAdmin = ["presidente", "vice_presidente", "diretor"].includes(user.role)
 
   return (
-    <nav className="border-b border-[#FFD700]/20 bg-[#001f3f]">
+    <nav className="border-b border-primary/20 bg-[var(--brand-secondary)]">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -71,8 +79,8 @@ export function DashboardNav({ user }: DashboardNavProps) {
                   key={item.href}
                   asChild
                   variant="ghost"
-                  className={`text-white hover:text-[#FFD700] hover:bg-white/5 ${
-                    isActive ? "text-[#FFD700] bg-white/5" : ""
+                  className={`text-[var(--brand-on-dark)] hover:text-primary hover:bg-white/5 ${
+                    isActive ? "text-primary bg-white/5" : ""
                   }`}
                 >
                   <Link href={item.href}>
@@ -86,8 +94,8 @@ export function DashboardNav({ user }: DashboardNavProps) {
               <Button
                 asChild
                 variant="ghost"
-                className={`text-white hover:text-[#FFD700] hover:bg-white/5 ${
-                  pathname?.startsWith("/dashboard/admin") ? "text-[#FFD700] bg-white/5" : ""
+                className={`text-[var(--brand-on-dark)] hover:text-primary hover:bg-white/5 ${
+                  pathname?.startsWith("/dashboard/admin") ? "text-primary bg-white/5" : ""
                 }`}
               >
                 <Link href="/dashboard/admin">
@@ -106,7 +114,7 @@ export function DashboardNav({ user }: DashboardNavProps) {
                 <Button variant="ghost" className="relative h-10 w-10 rounded-full">
                   <Avatar>
                     <AvatarImage src={user.avatar_url || ""} alt={user.full_name} className="object-cover" />
-                    <AvatarFallback className="bg-[#FFD700] text-black">
+                    <AvatarFallback className="bg-primary text-primary-foreground">
                       {user.full_name
                         .split(" ")
                         .map((n) => n[0])
@@ -143,7 +151,7 @@ export function DashboardNav({ user }: DashboardNavProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden text-white hover:text-[#FFD700] hover:bg-white/5"
+              className="md:hidden text-[var(--brand-on-dark)] hover:text-primary hover:bg-white/5"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -153,7 +161,7 @@ export function DashboardNav({ user }: DashboardNavProps) {
 
         {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-[#FFD700]/20 bg-[#001f3f]">
+          <div className="md:hidden border-t border-primary/20 bg-[var(--brand-secondary)]">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => {
                 const Icon = item.icon
@@ -163,8 +171,8 @@ export function DashboardNav({ user }: DashboardNavProps) {
                     key={item.href}
                     asChild
                     variant="ghost"
-                    className={`w-full justify-start text-white hover:text-[#FFD700] hover:bg-white/5 ${
-                      isActive ? "text-[#FFD700] bg-white/5" : ""
+                    className={`w-full justify-start text-[var(--brand-on-dark)] hover:text-primary hover:bg-white/5 ${
+                      isActive ? "text-primary bg-white/5" : ""
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -179,8 +187,8 @@ export function DashboardNav({ user }: DashboardNavProps) {
                 <Button
                   asChild
                   variant="ghost"
-                  className={`w-full justify-start text-white hover:text-[#FFD700] hover:bg-white/5 ${
-                    pathname?.startsWith("/dashboard/admin") ? "text-[#FFD700] bg-white/5" : ""
+                  className={`w-full justify-start text-[var(--brand-on-dark)] hover:text-primary hover:bg-white/5 ${
+                    pathname?.startsWith("/dashboard/admin") ? "text-primary bg-white/5" : ""
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

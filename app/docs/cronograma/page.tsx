@@ -96,11 +96,11 @@ function MilestoneMarker({ week, id, label }: { week: number; id: string; label:
 
   return (
     <div
-      className="absolute top-0 bottom-0 w-px bg-[#FFD700]/60"
+      className="absolute top-0 bottom-0 w-px bg-primary/60"
       style={{ left: `${leftPercent}%` }}
       title={`Semana ${week}: ${label}`}
     >
-      <div className="absolute -top-2 left-1/2 -translate-x-1/2 rounded bg-[#FFD700] px-1.5 py-0.5 text-[10px] font-bold text-black opacity-90">
+      <div className="absolute -top-2 left-1/2 -translate-x-1/2 rounded bg-primary px-1.5 py-0.5 text-[10px] font-bold text-black opacity-90">
         {id}
       </div>
     </div>
@@ -125,7 +125,7 @@ export default function CronogramaPage() {
       <Card className="border-white/10 bg-white/5">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-white">
-            <Flag className="h-5 w-5 text-[#FFD700]" />
+            <Flag className="h-5 w-5 text-primary" />
             Marcos do Projeto
           </CardTitle>
           <CardDescription className="text-white/70">
@@ -140,7 +140,7 @@ export default function CronogramaPage() {
                 className="rounded-lg border border-white/10 bg-white/5 p-4 transition hover:bg-white/10"
               >
                 <div className="flex items-center gap-2">
-                  <Badge className="bg-[#FFD700] text-black">{m.id}</Badge>
+                  <Badge className="bg-primary text-black">{m.id}</Badge>
                   <span className="text-xs text-white/60">Semana {m.week}</span>
                 </div>
                 <p className="mt-2 font-medium text-white">{m.label}</p>
@@ -154,7 +154,7 @@ export default function CronogramaPage() {
       <Card className="border-white/10 bg-white/5">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-white">
-            <Calendar className="h-5 w-5 text-[#FFD700]" />
+            <Calendar className="h-5 w-5 text-primary" />
             Diagrama de Gantt
           </CardTitle>
           <CardDescription className="text-white/70">
@@ -217,13 +217,13 @@ export default function CronogramaPage() {
       <Card className="border-white/10 bg-white/5">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-white">
-            <CheckCircle2 className="h-5 w-5 text-[#FFD700]" />
+            <CheckCircle2 className="h-5 w-5 text-primary" />
             Caminho Crítico
           </CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-sm text-white/80 leading-relaxed">
-            Infra → Auth → Dashboard → Ranking/Eventos → Ciclo → Admin → <strong className="text-[#FFD700]">VLibras + Modo Neuro</strong> → QA → Deploy
+            Infra → Auth → Dashboard → Ranking/Eventos → Ciclo → Admin → <strong className="text-primary">VLibras + Modo Neuro</strong> → QA → Deploy
           </p>
         </CardContent>
       </Card>

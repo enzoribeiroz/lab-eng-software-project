@@ -36,14 +36,14 @@ export function RoleBadge({ boardRole, developmentLevel, instituteAreas }: RoleB
   }
 
   const boardRoleColors: Record<string, string> = {
-    presidente: "bg-[#FFD700] text-black hover:bg-[#FFD700]/90",
-    vice_presidente: "bg-[#FFD700]/80 text-black hover:bg-[#FFD700]/70",
-    diretor_eventos: "bg-[#003366] text-[#FFD700] hover:bg-[#003366]/90",
-    diretor_comunicacao: "bg-[#003366] text-[#FFD700] hover:bg-[#003366]/90",
-    diretor_formacao: "bg-[#003366] text-[#FFD700] hover:bg-[#003366]/90",
-    diretor_institucional: "bg-[#003366] text-[#FFD700] hover:bg-[#003366]/90",
-    diretor_financeiro: "bg-[#003366] text-[#FFD700] hover:bg-[#003366]/90",
-    diretor_forum: "bg-[#003366] text-[#FFD700] hover:bg-[#003366]/90",
+    presidente: "bg-primary text-primary-foreground hover:bg-primary/90",
+    vice_presidente: "bg-primary/80 text-primary-foreground hover:bg-primary/70",
+    diretor_eventos: "bg-[var(--brand-tertiary)] text-primary hover:bg-[var(--brand-tertiary)]/90",
+    diretor_comunicacao: "bg-[var(--brand-tertiary)] text-primary hover:bg-[var(--brand-tertiary)]/90",
+    diretor_formacao: "bg-[var(--brand-tertiary)] text-primary hover:bg-[var(--brand-tertiary)]/90",
+    diretor_institucional: "bg-[var(--brand-tertiary)] text-primary hover:bg-[var(--brand-tertiary)]/90",
+    diretor_financeiro: "bg-[var(--brand-tertiary)] text-primary hover:bg-[var(--brand-tertiary)]/90",
+    diretor_forum: "bg-[var(--brand-tertiary)] text-primary hover:bg-[var(--brand-tertiary)]/90",
     conselheiro: "bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-600 dark:text-white",
   }
 

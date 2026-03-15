@@ -93,7 +93,7 @@ export default function SubmitActivityForm({ activities, userId }: SubmitActivit
 
       const { error } = await supabase.from("activity_participation").insert({
         activity_id: selectedActivity,
-        user_id: userId,
+        member_id: userId,
         notes: notes || null,
         image_url: imageUrl,
         completed: false,
@@ -219,7 +219,7 @@ export default function SubmitActivityForm({ activities, userId }: SubmitActivit
         <Button
           type="submit"
           disabled={loading || !selectedActivity}
-          className="flex-1 bg-[#FFD700] text-black hover:bg-[#FFD700]/90"
+          className="flex-1 bg-primary text-black hover:bg-primary/90"
         >
           {loading ? "Submetendo..." : "Submeter Atividade"}
         </Button>

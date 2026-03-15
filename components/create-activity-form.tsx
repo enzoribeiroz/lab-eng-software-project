@@ -117,7 +117,7 @@ export default function CreateActivityForm({ userId }: CreateActivityFormProps) 
         >
           Cancelar
         </Button>
-        <Button type="submit" disabled={loading} className="flex-1 bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+        <Button type="submit" disabled={loading} className="flex-1 bg-primary text-black hover:bg-primary/90">
           {loading ? "Criando..." : "Criar Atividade"}
         </Button>
       </div>

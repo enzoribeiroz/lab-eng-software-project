@@ -50,10 +50,10 @@ export default function DocsIndexPage() {
       <div className="grid gap-6 sm:grid-cols-2">
         {docs.map((doc) => (
           <Link key={doc.href} href={doc.href} className="block">
-            <Card className="h-full border-white/10 bg-white/5 transition hover:border-[#FFD700]/30 hover:bg-white/10">
+            <Card className="h-full border-white/10 bg-white/5 transition hover:border-primary/30 hover:bg-white/10">
               <CardHeader className="flex flex-row items-start gap-4">
-                <div className="rounded-lg bg-[#FFD700]/20 p-3">
-                  <doc.icon className="h-6 w-6 text-[#FFD700]" />
+                <div className="rounded-lg bg-primary/20 p-3">
+                  <doc.icon className="h-6 w-6 text-primary" />
                 </div>
                 <div className="flex-1">
                   <CardTitle className="text-white">{doc.title}</CardTitle>

@@ -23,7 +23,7 @@ export function ExportPdfButton({
       variant={variant}
       size={size}
       onClick={handleExport}
-      className={`border-[#FFD700]/50 text-[#FFD700] hover:bg-[#FFD700]/10 hover:text-[#FFD700] print:hidden ${className}`}
+      className={`border-primary/50 text-primary hover:bg-primary/10 hover:text-primary print:hidden ${className}`}
     >
       <FileDown className="mr-2 h-4 w-4" />
       Exportar como PDF

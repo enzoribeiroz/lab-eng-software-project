@@ -54,7 +54,7 @@ export default function OpportunityActions({ opportunity }: OpportunityActionsPr
           asChild
           size="sm"
           variant="outline"
-          className="border-[#FFD700]/40 text-blue-500 bg-transparent"
+          className="border-primary/40 text-blue-500 bg-transparent"
         >
           <a href={opportunity.link} target="_blank" rel="noopener noreferrer">
             <ExternalLink className="mr-1 h-3 w-3" />
@@ -66,7 +66,7 @@ export default function OpportunityActions({ opportunity }: OpportunityActionsPr
         asChild
         size="sm"
         variant="outline"
-        className="border-[#FFD700]/40 text-blue-500 bg-transparent"
+        className="border-primary/40 text-blue-500 bg-transparent"
       >
         <Link href={`/dashboard/admin/opportunities/${opportunity.id}/edit`}>
           <Edit className="mr-1 h-3 w-3" />

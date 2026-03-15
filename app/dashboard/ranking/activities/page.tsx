@@ -33,7 +33,7 @@ export default async function ActivitiesPage() {
       )
     `,
     )
-    .eq("user_id", user.id)
+    .eq("member_id", user.id)
     .order("created_at", { ascending: false })
 
   const pendingCount = participations?.filter((p) => !p.completed).length || 0
@@ -47,7 +47,7 @@ export default async function ActivitiesPage() {
           <h1 className="text-4xl font-bold text-foreground mb-2">Minhas Atividades</h1>
           <p className="text-muted-foreground">Submeta e acompanhe suas atividades de engajamento</p>
         </div>
-        <Button asChild className="bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+        <Button asChild className="bg-primary text-black hover:bg-primary/90">
           <Link href="/dashboard/ranking/activities/submit">
             <Plus className="mr-2 h-4 w-4" />
             Submeter Atividade
@@ -56,7 +56,7 @@ export default async function ActivitiesPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-foreground">Pendentes</CardTitle>
             <Clock className="h-4 w-4 text-yellow-500" />
@@ -67,21 +67,21 @@ export default async function ActivitiesPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-foreground">Aprovadas</CardTitle>
             <CheckCircle className="h-4 w-4 text-green-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-[#FFD700]">{approvedCount}</div>
+            <div className="text-3xl font-bold text-primary">{approvedCount}</div>
             <p className="text-xs text-muted-foreground mt-1">Atividades concluídas</p>
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-foreground">Pontos Ganhos</CardTitle>
-            <CheckCircle className="h-4 w-4 text-[#FFD700]" />
+            <CheckCircle className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
             <div className="text-3xl font-bold text-foreground">{totalPoints}</div>
@@ -90,7 +90,7 @@ export default async function ActivitiesPage() {
         </Card>
       </div>
 
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground">Histórico de Atividades</CardTitle>
           <CardDescription className="text-muted-foreground">Todas as suas atividades submetidas</CardDescription>
@@ -99,7 +99,7 @@ export default async function ActivitiesPage() {
           {!participations || participations.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-muted-foreground mb-4">Você ainda não submeteu nenhuma atividade</p>
-              <Button asChild className="bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+              <Button asChild className="bg-primary text-black hover:bg-primary/90">
                 <Link href="/dashboard/ranking/activities/submit">
                   <Plus className="mr-2 h-4 w-4" />
                   Submeter Primeira Atividade
@@ -128,7 +128,7 @@ export default async function ActivitiesPage() {
                         Tipo: <span className="text-foreground">{participation.activities.activity_type}</span>
                       </span>
                       <span className="text-muted-foreground">
-                        Pontos: <span className="text-[#FFD700]">{participation.activities.points_value}</span>
+                        Pontos: <span className="text-primary">{participation.activities.points_value}</span>
                       </span>
                       <span className="text-muted-foreground">
                         Status:{" "}
@@ -158,7 +158,7 @@ export default async function ActivitiesPage() {
                   </div>
                   {participation.completed && (
                     <div className="text-right">
-                      <div className="text-2xl font-bold text-[#FFD700]">+{participation.points_earned}</div>
+                      <div className="text-2xl font-bold text-primary">+{participation.points_earned}</div>
                       <div className="text-xs text-muted-foreground">pontos</div>
                     </div>
                   )}

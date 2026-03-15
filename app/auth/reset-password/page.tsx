@@ -71,13 +71,13 @@ function ResetPasswordForm() {
 
   if (success) {
     return (
-      <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[#001f3f] via-[#003366] to-black p-6">
+      <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[var(--brand-secondary)] via-[var(--brand-tertiary)] to-[var(--brand-gradient-end)] p-6">
         <div className="w-full max-w-md">
           <div className="mb-8 text-center">
             <Logo size="lg" showText={true} className="justify-center" href="" />
           </div>
 
-          <Card className="border-[#FFD700]/20">
+          <Card className="border-primary/20">
             <CardHeader>
               <CardTitle className="text-2xl">Senha Redefinida!</CardTitle>
               <CardDescription>Redirecionando para o login...</CardDescription>
@@ -86,7 +86,7 @@ function ResetPasswordForm() {
               <p className="text-sm text-muted-foreground">
                 Sua senha foi redefinida com sucesso. Você será redirecionado para a página de login em alguns segundos.
               </p>
-              <Button asChild className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+              <Button asChild className="w-full bg-primary text-black hover:bg-primary/90">
                 <Link href="/auth/login">Ir para Login</Link>
               </Button>
             </CardContent>
@@ -97,13 +97,13 @@ function ResetPasswordForm() {
   }
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[#001f3f] via-[#003366] to-black p-6">
+    <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[var(--brand-secondary)] via-[var(--brand-tertiary)] to-[var(--brand-gradient-end)] p-6">
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
           <Logo size="lg" showText={true} className="justify-center" href="" />
         </div>
 
-        <Card className="border-[#FFD700]/20">
+        <Card className="border-primary/20">
           <CardHeader>
             <CardTitle className="text-2xl">Nova Senha</CardTitle>
             <CardDescription>Digite sua nova senha</CardDescription>
@@ -136,7 +136,7 @@ function ResetPasswordForm() {
                 {error && <p className="text-sm text-destructive">{error}</p>}
                 <Button
                   type="submit"
-                  className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90"
+                  className="w-full bg-primary text-black hover:bg-primary/90"
                   disabled={isLoading}
                 >
                   {isLoading ? "Redefinindo..." : "Redefinir Senha"}
@@ -145,7 +145,7 @@ function ResetPasswordForm() {
               <div className="mt-4 text-center text-sm">
                 <Link
                   href="/auth/login"
-                  className="text-[#FFD700] underline underline-offset-4 hover:text-[#FFD700]/80"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
                 >
                   Voltar para Login
                 </Link>
@@ -161,12 +161,12 @@ function ResetPasswordForm() {
 export default function ResetPasswordPage() {
   return (
     <Suspense fallback={
-      <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[#001f3f] via-[#003366] to-black p-6">
+      <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[var(--brand-secondary)] via-[var(--brand-tertiary)] to-[var(--brand-gradient-end)] p-6">
         <div className="w-full max-w-md">
           <div className="mb-8 text-center">
             <Logo size="lg" showText={true} className="justify-center" href="" />
           </div>
-          <Card className="border-[#FFD700]/20">
+          <Card className="border-primary/20">
             <CardContent className="p-6">
               <div className="text-center">Carregando...</div>
             </CardContent>

@@ -68,7 +68,7 @@ export default function ActivityActions({ activity }: ActivityActionsProps) {
         asChild
         size="sm"
         variant="outline"
-        className="border-[#FFD700]/40 text-blue-500 bg-transparent"
+        className="border-primary/40 text-blue-500 bg-transparent"
       >
         <Link href={`/dashboard/admin/activities/${activity.id}/edit`}>
           <Edit className="mr-1 h-3 w-3" />

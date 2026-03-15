@@ -36,7 +36,7 @@ export default async function TaskFormPage({ params }: PageProps) {
         </Link>
       </Button>
 
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground">{task.title}</CardTitle>
           {task.description && (

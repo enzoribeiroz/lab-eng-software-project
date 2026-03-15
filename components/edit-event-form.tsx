@@ -207,7 +207,7 @@ export function EditEventForm({ event, userId }: EditEventFormProps) {
             type="file"
             accept="image/*"
             onChange={handleImageChange}
-            className="bg-input border-border text-foreground file:bg-[#FFD700] file:text-black file:border-0 file:rounded file:px-4 file:py-2 file:mr-4"
+            className="bg-input border-border text-foreground file:bg-primary file:text-black file:border-0 file:rounded file:px-4 file:py-2 file:mr-4"
           />
           {imagePreview && (
             <div className="mt-2">
@@ -217,7 +217,7 @@ export function EditEventForm({ event, userId }: EditEventFormProps) {
                 className="w-32 h-32 object-cover rounded-lg border border-border"
               />
               {hasNewImage && (
-                <p className="text-sm text-[#FFD700] mt-1">Nova imagem selecionada</p>
+                <p className="text-sm text-primary mt-1">Nova imagem selecionada</p>
               )}
             </div>
           )}
@@ -325,7 +325,7 @@ export function EditEventForm({ event, userId }: EditEventFormProps) {
           >
             Cancelar
           </Button>
-          <Button type="submit" disabled={loading} className="flex-1 bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+          <Button type="submit" disabled={loading} className="flex-1 bg-primary text-black hover:bg-primary/90">
             {loading ? "Atualizando..." : "Atualizar Evento"}
           </Button>
         </div>

@@ -32,14 +32,14 @@ export default async function OpportunitiesPage() {
         </p>
       </div>
 
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground flex items-center gap-2">
-            <Briefcase className="h-5 w-5 text-[#FFD700]" />
+            <Briefcase className="h-5 w-5 text-primary" />
             Oportunidades Disponíveis
           </CardTitle>
           <CardDescription className="text-muted-foreground">
-            Confira as oportunidades disponíveis para membros do IFL
+            Confira as oportunidades disponíveis para os membros
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -54,12 +54,12 @@ export default async function OpportunitiesPage() {
               {opportunities.map((opp: any) => (
                 <Card
                   key={opp.id}
-                  className="bg-card/50 border-primary/10 hover:border-[#FFD700]/30 transition-colors overflow-hidden"
+                  className="bg-card/50 border-primary/10 hover:border-primary/30 transition-colors overflow-hidden"
                 >
                   <CardHeader className="pb-2">
                     <div className="flex items-start justify-between gap-2">
                       <CardTitle className="text-lg">{opp.title}</CardTitle>
-                      <span className="text-xs px-2 py-0.5 rounded-full bg-[#FFD700]/20 text-[#FFD700] shrink-0">
+                      <span className="text-xs px-2 py-0.5 rounded-full bg-primary/20 text-primary shrink-0">
                         {opp.opportunity_type}
                       </span>
                     </div>
@@ -73,7 +73,7 @@ export default async function OpportunitiesPage() {
                         href={opp.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm text-[#FFD700] hover:text-[#FFD700]/80 font-medium"
+                        className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 font-medium"
                       >
                         <ExternalLink className="h-4 w-4" />
                         Saiba mais

@@ -80,10 +80,10 @@ export function AdminManagement() {
 
   return (
     <div className="space-y-6">
-      <Card className="bg-white/5 border-[#FFD700]/20">
+      <Card className="bg-white/5 border-primary/20">
         <CardHeader>
           <CardTitle className="text-white flex items-center gap-2">
-            <Crown className="h-5 w-5 text-[#FFD700]" />
+            <Crown className="h-5 w-5 text-primary" />
             Gerenciar Administradores
           </CardTitle>
           <CardDescription className="text-white/60">
@@ -121,7 +121,7 @@ export function AdminManagement() {
             <Button
               onClick={handlePromoteUser}
               disabled={loading}
-              className="flex-1 bg-[#FFD700] text-black hover:bg-[#FFD700]/90"
+              className="flex-1 bg-primary text-black hover:bg-primary/90"
             >
               {loading ? "Promovendo..." : "Promover Usuário"}
             </Button>
@@ -139,10 +139,10 @@ export function AdminManagement() {
         </CardContent>
       </Card>
 
-      <Card className="bg-white/5 border-[#FFD700]/20">
+      <Card className="bg-white/5 border-primary/20">
         <CardHeader>
           <CardTitle className="text-white flex items-center gap-2">
-            <Shield className="h-5 w-5 text-[#FFD700]" />
+            <Shield className="h-5 w-5 text-primary" />
             Configuração Inicial
           </CardTitle>
           <CardDescription className="text-white/60">

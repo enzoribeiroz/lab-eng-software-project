@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LandingHeader } from "@/components/landing/landing-header"
-import { LandingFooter } from "@/components/landing/landing-footer"
+import { DocsHeader } from "@/components/docs/docs-header"
+import { DocsFooter } from "@/components/docs/docs-footer"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { ArrowLeft, FileText, Calendar, ClipboardList, FolderTree, Layers } from "lucide-react"
@@ -20,8 +20,8 @@ const docNavItems = [
 
 export function DocsLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-[#001f3f]">
-      <LandingHeader />
+    <div className="min-h-screen" style={{ backgroundColor: "var(--brand-secondary)" }}>
+      <DocsHeader />
       <div className="pt-24 pb-16">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:gap-8 lg:px-8">
           {/* Sidebar - mobile: horizontal scroll, desktop: sticky sidebar */}
@@ -49,9 +49,9 @@ export function DocsLayout({ children }: { children: React.ReactNode }) {
               <div className="mt-6 space-y-2 border-t border-white/10 pt-4">
                 <ExportPdfButton className="w-full justify-center" />
                 <Button asChild variant="ghost" size="sm" className="w-full justify-start text-white/70 hover:text-white">
-                  <Link href="/">
+                  <Link href="/auth/login">
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Voltar ao site
+                    Entrar
                   </Link>
                 </Button>
               </div>
@@ -61,7 +61,7 @@ export function DocsLayout({ children }: { children: React.ReactNode }) {
           <main id="doc-content" className="min-w-0 flex-1">{children}</main>
         </div>
       </div>
-      <LandingFooter />
+      <DocsFooter />
     </div>
   )
 }
@@ -84,7 +84,7 @@ function DocsNavLink({
       className={cn(
         "flex items-center gap-2 rounded-md px-3 py-2 text-sm transition",
         isActive
-          ? "bg-[#FFD700]/20 text-[#FFD700]"
+          ? "bg-primary/20 text-primary"
           : "text-white/80 hover:bg-white/10 hover:text-white"
       )}
     >

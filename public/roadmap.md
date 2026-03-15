@@ -1,5 +1,5 @@
 # Roadmap — Ciclo de Formação  
-**Instituto de Formação de Líderes Jovem de São Paulo (IFL Jovem SP)**  
+**Plataforma de Formação**  
 Versão 2025.2  
 :contentReference[oaicite:0]{index=0}
 
@@ -7,7 +7,7 @@ Versão 2025.2
 
 ## 1. Objetivo do Roadmap
 
-O Roadmap do Ciclo de Formação define, de forma clara e estruturada, a jornada completa de desenvolvimento dos associados do **:contentReference[oaicite:1]{index=1}**.
+O Roadmap do Ciclo de Formação define, de forma clara e estruturada, a jornada completa de desenvolvimento dos associados.
 
 Seu propósito é:
 - Orientar o crescimento pessoal e institucional dos membros
@@ -21,7 +21,7 @@ O documento não é apenas um cronograma, mas um **guia de formação de lideran
 
 ## 2. Valores do Ciclo de Formação
 
-Todo o Ciclo é guiado pelo **Hexágono de Valores do IFL**, que orienta atividades, avaliações e feedbacks:
+Todo o Ciclo é guiado por valores fundamentais, que orientam atividades, avaliações e feedbacks:
 
 - **Integridade Moral**  
   Honestidade intelectual, respeito às regras e coerência entre discurso e prática.

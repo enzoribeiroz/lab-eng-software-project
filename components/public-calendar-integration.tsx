@@ -80,7 +80,7 @@ export function PublicCalendarIntegration({ event }: PublicCalendarIntegrationPr
           onClick={() => handleCalendarDownload('ics')}
           disabled={isGenerating}
           variant="outline"
-          className="w-full border-[#FFD700]/40 text-[#FFD700] bg-transparent hover:bg-[#FFD700]/10"
+          className="w-full border-primary/40 text-primary bg-transparent hover:bg-primary/10"
         >
           <Download className="mr-2 h-4 w-4" />
           {isGenerating ? "Gerando..." : "Baixar arquivo .ics"}

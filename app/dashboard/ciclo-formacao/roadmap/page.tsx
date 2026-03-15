@@ -32,12 +32,12 @@ export default async function RoadmapFormacaoPage() {
       <div>
         <h1 className="text-4xl font-bold text-foreground mb-2">Roadmap de Formação</h1>
         <p className="text-muted-foreground text-lg">
-          Instituto de Formação de Líderes Jovem de São Paulo — Versão 2025.2
+          Roadmap de Formação — Versão 2025.2
         </p>
       </div>
 
       {/* Objetivo */}
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground flex items-center gap-2">
             <Target className="h-5 w-5 text-primary" />
@@ -45,7 +45,7 @@ export default async function RoadmapFormacaoPage() {
           </CardTitle>
           <CardDescription className="text-muted-foreground text-base">
             O Roadmap do Ciclo de Formação define, de forma clara e estruturada, a jornada completa de
-            desenvolvimento dos associados do IFL Jovem SP.
+            desenvolvimento dos associados.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4 pt-0">
@@ -71,14 +71,14 @@ export default async function RoadmapFormacaoPage() {
       </Card>
 
       {/* Valores */}
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground flex items-center gap-2">
             <Heart className="h-5 w-5 text-primary" />
             2. Valores do Ciclo de Formação
           </CardTitle>
           <CardDescription className="text-muted-foreground text-base">
-            Todo o Ciclo é guiado pelo Hexágono de Valores do IFL
+            Todo o Ciclo é guiado por valores fundamentais
           </CardDescription>
         </CardHeader>
         <CardContent className="pt-0">
@@ -124,7 +124,7 @@ export default async function RoadmapFormacaoPage() {
       </Card>
 
       {/* Estrutura - 4 Fases */}
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground flex items-center gap-2">
             <Layers className="h-5 w-5 text-primary" />
@@ -190,7 +190,7 @@ export default async function RoadmapFormacaoPage() {
       </Card>
 
       {/* Skills */}
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground flex items-center gap-2">
             <Brain className="h-5 w-5 text-primary" />
@@ -265,7 +265,7 @@ export default async function RoadmapFormacaoPage() {
       </Card>
 
       {/* Modelo de Atividades */}
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-primary" />
@@ -299,7 +299,7 @@ export default async function RoadmapFormacaoPage() {
       </Card>
 
       {/* Detalhamento por Fase */}
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground flex items-center gap-2">
             <GraduationCap className="h-5 w-5 text-primary" />
@@ -372,7 +372,7 @@ export default async function RoadmapFormacaoPage() {
 
       {/* Avaliação e Ranking */}
       <div className="grid gap-6 lg:grid-cols-2">
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader>
             <CardTitle className="text-foreground text-lg">7. Avaliação e Feedback</CardTitle>
           </CardHeader>
@@ -386,7 +386,7 @@ export default async function RoadmapFormacaoPage() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader>
             <CardTitle className="text-foreground text-lg">8. Ranking de Formação</CardTitle>
           </CardHeader>
@@ -403,7 +403,7 @@ export default async function RoadmapFormacaoPage() {
       </div>
 
       {/* Programa de Leituras + CTA */}
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20 overflow-hidden">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20 overflow-hidden">
         <div className="bg-linear-to-r from-primary/10 to-primary/5 px-6 py-6">
           <CardTitle className="text-foreground flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-primary" />

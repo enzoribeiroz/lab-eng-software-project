@@ -19,7 +19,7 @@ export function AttendanceList({ attendees, eventId, pointsValue }: AttendanceLi
   const router = useRouter()
   const supabase = createClient()
 
-  const handleToggleAttendance = async (attendanceId: string, currentStatus: boolean, userId: string) => {
+  const handleToggleAttendance = async (attendanceId: string, currentStatus: boolean, _memberId: string) => {
     setLoading(attendanceId)
     try {
       const newStatus = !currentStatus
@@ -54,7 +54,7 @@ export function AttendanceList({ attendees, eventId, pointsValue }: AttendanceLi
           <div className="flex items-center gap-4">
             <Avatar className="h-12 w-12">
               <AvatarImage src="/placeholder.svg" alt={attendee.profiles?.full_name} className="object-cover" />
-              <AvatarFallback className="bg-[#FFD700] text-black">
+              <AvatarFallback className="bg-primary text-black">
                 {attendee.profiles?.full_name
                   .split(" ")
                   .map((n: string) => n[0])
@@ -88,13 +88,13 @@ export function AttendanceList({ attendees, eventId, pointsValue }: AttendanceLi
             )}
 
             <Button
-              onClick={() => handleToggleAttendance(attendee.id, attendee.attended, attendee.user_id)}
+              onClick={() => handleToggleAttendance(attendee.id, attendee.attended, attendee.member_id)}
               disabled={loading === attendee.id}
               size="sm"
               className={
                 attendee.attended
                   ? "bg-red-600 hover:bg-red-700 text-foreground"
-                  : "bg-[#FFD700] text-black hover:bg-[#FFD700]/90"
+                  : "bg-primary text-black hover:bg-primary/90"
               }
             >
               {loading === attendee.id ? "..." : attendee.attended ? "Marcar Ausente" : "Marcar Presente"}

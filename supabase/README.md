@@ -1,51 +1,52 @@
-# Supabase Schema – IFL Jovem SP
+# Supabase Integration
 
-## Overview
+## New Project Setup
 
-Single consolidated migration defining the full database schema for the Plataforma Educacional Acessível.
+1. **Get credentials** from Supabase Dashboard → Project Settings → API
+2. **Copy** `.env.example` → `.env` and fill in `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+3. **Link & push**: `supabase link --project-ref YOUR_PROJECT_REF` then `supabase db push`
+4. **Auth URLs**: Dashboard → Authentication → URL Configuration → add redirect URLs
+5. **First admin**: Sign up via app, then Configurações → Administração → "Criar primeiro administrador"
 
-## Schema Structure
+---
 
-| Table | Purpose |
-|-------|---------|
-| `profiles` | Member profiles extending `auth.users` (bio, role, board_role, development_level, etc.) |
-| `member_institute_areas` | Institute areas each member participates in |
-| `events` | Institute events with dates, location, points |
-| `event_attendance` | Event registration and presence tracking |
-| `activities` | Engagement activities for points |
-| `activity_participation` | Submissions and approval of activities |
-| `opportunities` | Stages, mentorship, courses |
-| `training_cycle_levels` | Ciclo de Formação levels |
-| `training_cycle_tasks` | Tasks per level |
-| `member_training_progress` | Member progress on cycle tasks |
+## Schema Overview (Domain-Based)
 
-## Applying the Schema
+Migrations are organized by domain:
 
-### Fresh install (resets all data)
+| Migration | Domain | Tables |
+|-----------|--------|--------|
+| `01_core_members` | Core | `profiles`, `member_institute_areas` |
+| `02_engagement` | Engagement | `event_statuses`, `events`, `event_attendance`, `activities`, `activity_participation` |
+| `03_content_training` | Content & Training | `opportunities`, `training_cycle_levels`, `training_cycle_tasks`, `member_training_progress` |
+| `04_storage_rpcs` | Infra | Storage buckets, `promote_to_admin`, `create_first_admin` |
 
+### Naming Conventions
+
+- **member_id** (not user_id): All member references use `member_id` → `profiles(id)`
+- **FKs** point to `profiles(id)` for domain consistency
+
+### Storage Buckets
+
+- `event-images` – Event and activity images (public)
+- `profile-images` – Avatars (public)
+
+### RLS & Admin
+
+- Admins: `profiles.board_role IS NOT NULL`
+- `is_board_member()` (SECURITY DEFINER) used in policies
+
+### Applying Migrations
+
+**New empty project:**
 ```bash
-supabase db reset
-```
-
-### Push to existing remote
-
-```bash
+supabase link --project-ref YOUR_PROJECT_REF
 supabase db push
 ```
 
-### Local development
-
+**If remote has old migrations**, repair and push:
 ```bash
-supabase start
-supabase db reset  # applies migrations
+supabase migration repair --status reverted 20250102000000
+supabase migration repair --status reverted 20250101000000
+supabase db push
 ```
-
-## RLS & Admin Access
-
-- **Admins**: users with `board_role IS NOT NULL` in `profiles`
-- The `is_board_member()` function (SECURITY DEFINER) checks admin status and is used in RLS policies
-- Admins can update any profile, manage events, activities, attendance, opportunities, and the Ciclo de Formação
-
-## Triggers
-
-- `on_auth_user_created`: creates a row in `profiles` when a user signs up (with `approved: false`)

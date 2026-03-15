@@ -129,19 +129,19 @@ export default function ActivityApprovalList({ participations }: ActivityApprova
                       <Button
                         size="sm"
                         onClick={() => handleSavePoints(participation.id)}
-                        className="h-6 px-2 bg-[#FFD700] text-black hover:bg-[#FFD700]/90"
+                        className="h-6 px-2 bg-primary text-black hover:bg-primary/90"
                       >
                         ✓
                       </Button>
                     </div>
                   ) : (
                     <div className="flex items-center gap-2">
-                      <span className="text-[#FFD700]">{getPointsValue(participation)}</span>
+                      <span className="text-primary">{getPointsValue(participation)}</span>
                       <Button
                         size="sm"
                         variant="ghost"
                         onClick={() => handleEditPoints(participation.id, getPointsValue(participation))}
-                        className="h-6 w-6 p-0 text-white/60 hover:text-[#FFD700] hover:bg-white/5"
+                        className="h-6 w-6 p-0 text-white/60 hover:text-primary hover:bg-white/5"
                       >
                         <Edit3 className="h-3 w-3" />
                       </Button>

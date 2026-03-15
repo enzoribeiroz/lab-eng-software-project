@@ -31,7 +31,7 @@ export function RegisterEventButton({ eventId, isRegistered }: RegisterEventButt
 
       const { error } = await supabase.from("event_attendance").insert({
         event_id: eventId,
-        user_id: user.id,
+        member_id: user.id,
         attended: false,
       })
 
@@ -56,7 +56,7 @@ export function RegisterEventButton({ eventId, isRegistered }: RegisterEventButt
 
       if (!user) return
 
-      const { error } = await supabase.from("event_attendance").delete().eq("event_id", eventId).eq("user_id", user.id)
+      const { error } = await supabase.from("event_attendance").delete().eq("event_id", eventId).eq("member_id", user.id)
 
       if (error) throw error
 
@@ -98,7 +98,7 @@ export function RegisterEventButton({ eventId, isRegistered }: RegisterEventButt
       <Button
         onClick={handleRegister}
         disabled={loading}
-        className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90"
+        className="w-full bg-primary text-black hover:bg-primary/90"
       >
         {loading ? "Inscrevendo..." : "Inscrever-se no Evento"}
       </Button>

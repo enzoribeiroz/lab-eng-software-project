@@ -59,7 +59,7 @@ export default async function EditMemberPage({ params }: Props) {
         </p>
       </div>
 
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground">
             Informações do Membro

@@ -29,7 +29,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ id
     .from("event_attendance")
     .select("*")
     .eq("event_id", id)
-    .eq("user_id", user.id)
+    .eq("member_id", user.id)
     .single()
 
   const { data: attendees } = await supabase
@@ -52,7 +52,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ id
     if (isRegistered) return <Badge className="bg-blue-600 hover:bg-blue-700">Você está Inscrito</Badge>
     if (isUpcoming)
       return (
-        <Badge variant="outline" className="border-[#FFD700] text-primary">
+        <Badge variant="outline" className="border-primary text-primary">
           Disponível
         </Badge>
       )
@@ -86,7 +86,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ id
       <div className="grid gap-6 md:grid-cols-3">
         <div className="md:col-span-2 space-y-6">
           {event.image_url && (
-            <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20 overflow-hidden rounded-2xl">
+            <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20 overflow-hidden rounded-2xl">
               <div className="relative aspect-square w-full max-w-md mx-auto">
                 <Image
                   src={event.image_url}
@@ -98,7 +98,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ id
             </Card>
           )}
           
-          <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+          <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
             <CardHeader>
               <CardTitle className="text-foreground">Sobre o Evento</CardTitle>
             </CardHeader>
@@ -174,7 +174,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ id
           </Card>
 
           {isUpcoming && !hasAttended && (
-            <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+            <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
               <CardContent className="py-6">
                 <RegisterEventButton eventId={event.id} isRegistered={isRegistered} />
               </CardContent>
@@ -183,7 +183,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ id
         </div>
 
         <div className="space-y-6">
-          <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+          <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
             <CardHeader>
               <CardTitle className="text-foreground">Participantes</CardTitle>
               <CardDescription className="text-muted-foreground">
@@ -201,7 +201,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ id
                       <div className="flex items-center gap-3">
                         <Avatar className="h-8 w-8">
                           <AvatarImage src={attendee.profiles?.avatar_url || ""} alt={attendee.profiles?.full_name} className="object-cover" />
-                          <AvatarFallback className="bg-[#FFD700] text-black">
+                          <AvatarFallback className="bg-primary text-black">
                             {attendee.profiles?.full_name
                               .split(" ")
                               .map((n: any) => n[0])

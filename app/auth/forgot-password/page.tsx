@@ -41,13 +41,13 @@ export default function ForgotPasswordPage() {
 
   if (success) {
     return (
-      <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[#001f3f] via-[#003366] to-black p-6">
+      <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[var(--brand-secondary)] via-[var(--brand-tertiary)] to-[var(--brand-gradient-end)] p-6">
         <div className="w-full max-w-md">
           <div className="mb-8 text-center">
             <Logo size="lg" showText={true} className="justify-center" href="" />
           </div>
 
-          <Card className="border-[#FFD700]/20">
+          <Card className="border-primary/20">
             <CardHeader>
               <CardTitle className="text-2xl">Email Enviado!</CardTitle>
               <CardDescription>Verifique sua caixa de entrada</CardDescription>
@@ -58,12 +58,12 @@ export default function ForgotPasswordPage() {
                 Verifique sua caixa de entrada e siga as instruções para redefinir sua senha.
               </p>
               <div className="space-y-2">
-                <Button asChild className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+                <Button asChild className="w-full bg-primary text-black hover:bg-primary/90">
                   <Link href="/auth/login">Voltar para Login</Link>
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700]/10"
+                  className="w-full border-primary text-primary hover:bg-primary/10"
                   onClick={() => {
                     setSuccess(false)
                     setEmail("")
@@ -80,13 +80,13 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[#001f3f] via-[#003366] to-black p-6">
+    <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[var(--brand-secondary)] via-[var(--brand-tertiary)] to-[var(--brand-gradient-end)] p-6">
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
           <Logo size="lg" showText={true} className="justify-center" href="" />
         </div>
 
-        <Card className="border-[#FFD700]/20">
+        <Card className="border-primary/20">
           <CardHeader>
             <CardTitle className="text-2xl">Recuperar Senha</CardTitle>
             <CardDescription>Digite seu email para receber um link de recuperação</CardDescription>
@@ -108,7 +108,7 @@ export default function ForgotPasswordPage() {
                 {error && <p className="text-sm text-destructive">{error}</p>}
                 <Button
                   type="submit"
-                  className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90"
+                  className="w-full bg-primary text-black hover:bg-primary/90"
                   disabled={isLoading}
                 >
                   {isLoading ? "Enviando..." : "Enviar Link de Recuperação"}
@@ -118,7 +118,7 @@ export default function ForgotPasswordPage() {
                 Lembrou da senha?{" "}
                 <Link
                   href="/auth/login"
-                  className="text-[#FFD700] underline underline-offset-4 hover:text-[#FFD700]/80"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
                 >
                   Voltar para Login
                 </Link>

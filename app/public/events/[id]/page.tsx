@@ -71,7 +71,7 @@ export default async function PublicEventPage({ params }: PublicEventPageProps) 
 
           {/* Event Image */}
           {event.image_url && (
-            <Card className="bg-white/5 border-[#FFD700]/20 overflow-hidden rounded-2xl">
+            <Card className="bg-white/5 border-primary/20 overflow-hidden rounded-2xl">
               <div className="relative aspect-square w-full max-w-md mx-auto">
                 <Image
                   src={event.image_url}
@@ -87,17 +87,17 @@ export default async function PublicEventPage({ params }: PublicEventPageProps) 
           {/* Event Details */}
           <div className="grid gap-6 md:grid-cols-2">
             {/* Main Details */}
-            <Card className="bg-white/5 border-[#FFD700]/20">
+            <Card className="bg-white/5 border-primary/20">
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
-                  <Calendar className="h-5 w-5 text-[#FFD700]" />
+                  <Calendar className="h-5 w-5 text-primary" />
                   Detalhes do Evento
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 gap-4">
                   <div className="flex items-center gap-3">
-                    <Calendar className="h-5 w-5 text-[#FFD700]" />
+                    <Calendar className="h-5 w-5 text-primary" />
                     <div>
                       <p className="text-xs text-white/60">Data</p>
                       <p className="text-sm font-medium text-white">
@@ -112,7 +112,7 @@ export default async function PublicEventPage({ params }: PublicEventPageProps) 
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <Clock className="h-5 w-5 text-[#FFD700]" />
+                    <Clock className="h-5 w-5 text-primary" />
                     <div>
                       <p className="text-xs text-white/60">Horário</p>
                       <p className="text-sm font-medium text-white">
@@ -126,7 +126,7 @@ export default async function PublicEventPage({ params }: PublicEventPageProps) 
 
                   {event.location && (
                     <div className="flex items-center gap-3">
-                      <MapPin className="h-5 w-5 text-[#FFD700]" />
+                      <MapPin className="h-5 w-5 text-primary" />
                       <div>
                         <p className="text-xs text-white/60">Local</p>
                         <p className="text-sm font-medium text-white">{event.location}</p>
@@ -135,16 +135,16 @@ export default async function PublicEventPage({ params }: PublicEventPageProps) 
                   )}
 
                   <div className="flex items-center gap-3">
-                    <Trophy className="h-5 w-5 text-[#FFD700]" />
+                    <Trophy className="h-5 w-5 text-primary" />
                     <div>
                       <p className="text-xs text-white/60">Pontos</p>
-                      <p className="text-sm font-medium text-[#FFD700]">{event.points_value} pontos</p>
+                      <p className="text-sm font-medium text-primary">{event.points_value} pontos</p>
                     </div>
                   </div>
 
                   {event.max_participants && (
                     <div className="flex items-center gap-3">
-                      <Users className="h-5 w-5 text-[#FFD700]" />
+                      <Users className="h-5 w-5 text-primary" />
                       <div>
                         <p className="text-xs text-white/60">Vagas Disponíveis</p>
                         <p className="text-sm font-medium text-white">{event.max_participants} participantes</p>
@@ -164,10 +164,10 @@ export default async function PublicEventPage({ params }: PublicEventPageProps) 
             </Card>
 
             {/* Calendar Integration */}
-            <Card className="bg-white/5 border-[#FFD700]/20">
+            <Card className="bg-white/5 border-primary/20">
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
-                  <Download className="h-5 w-5 text-[#FFD700]" />
+                  <Download className="h-5 w-5 text-primary" />
                   Adicionar ao Calendário
                 </CardTitle>
                 <CardDescription className="text-white/60">
@@ -181,10 +181,10 @@ export default async function PublicEventPage({ params }: PublicEventPageProps) 
           </div>
 
           {/* Share Section */}
-          <Card className="bg-white/5 border-[#FFD700]/20">
+          <Card className="bg-white/5 border-primary/20">
             <CardHeader>
               <CardTitle className="text-white flex items-center gap-2">
-                <Share2 className="h-5 w-5 text-[#FFD700]" />
+                <Share2 className="h-5 w-5 text-primary" />
                 Compartilhar Evento
               </CardTitle>
               <CardDescription className="text-white/60">
@@ -201,7 +201,7 @@ export default async function PublicEventPage({ params }: PublicEventPageProps) 
 
           {/* Call to Action */}
           {/* {isUpcoming && event.status === 'scheduled' && (
-            <Card className="bg-linear-to-r from-[#FFD700]/10 to-[#FFD700]/5 border-[#FFD700]/30">
+            <Card className="bg-linear-to-r from-primary/10 to-primary/5 border-primary/30">
               <CardContent className="py-8 text-center">
                 <h3 className="text-2xl font-bold text-white mb-4">
                   Interessado em participar?
@@ -212,7 +212,7 @@ export default async function PublicEventPage({ params }: PublicEventPageProps) 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 
                     asChild 
-                    className="bg-[#FFD700] text-black hover:bg-[#FFD700]/90"
+                    className="bg-primary text-black hover:bg-primary/90"
                   >
                     <a href="/auth/login">
                       Fazer Login
@@ -221,7 +221,7 @@ export default async function PublicEventPage({ params }: PublicEventPageProps) 
                   <Button 
                     asChild 
                     variant="outline"
-                    className="border-[#FFD700]/40 text-[#FFD700] bg-transparent hover:bg-[#FFD700]/10"
+                    className="border-primary/40 text-primary bg-transparent hover:bg-primary/10"
                   >
                     <a href="/auth/sign-up">
                       Criar Conta

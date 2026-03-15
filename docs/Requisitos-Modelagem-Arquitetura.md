@@ -1,5 +1,5 @@
 # Requisitos, Modelagem e Arquitetura
-## Plataforma Educacional Acessível (White-Label) – IFL Jovem SP
+## Plataforma Educacional Acessível (White-Label)
 
 | Versão | Data | Grupo ABE |
 |--------|------|-----------|

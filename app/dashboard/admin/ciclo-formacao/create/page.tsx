@@ -47,7 +47,7 @@ export default async function CreateTrainingTaskPage({ searchParams }: PageProps
         <p className="text-muted-foreground">Adicione uma nova tarefa a um nível de desenvolvimento</p>
       </div>
 
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground">Informações da tarefa</CardTitle>
           <CardDescription className="text-muted-foreground">Preencha os detalhes da tarefa</CardDescription>

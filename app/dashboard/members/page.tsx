@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server"
+import { siteConfig } from "@/lib/site-config"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { RoleBadge } from "@/components/role-badge"
@@ -32,10 +33,10 @@ export default async function MembersPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-4xl font-bold text-foreground mb-2">Membros</h1>
-        <p className="text-muted-foreground">Conheça todos os membros do IFL Jovem SP</p>
+        <p className="text-muted-foreground">Conheça todos os membros de {siteConfig.siteName}</p>
       </div>
 
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader className="flex flex-row items-center justify-between space-y-0">
           <div>
             <CardTitle className="text-foreground">Total de Membros</CardTitle>
@@ -61,13 +62,13 @@ export default async function MembersPage() {
                 {members.map((member) => (
                   <Card
                     key={member.id}
-                    className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20 hover:border-primary/40 transition-colors h-full flex flex-col min-h-[280px]"
+                    className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20 hover:border-primary/40 transition-colors h-full flex flex-col min-h-[280px]"
                   >
                     <CardContent className="pt-6 flex-1 flex flex-col">
                       <div className="flex flex-col items-center text-center space-y-4 flex-1">
                         <Avatar className="h-20 w-20">
                           <AvatarImage src={member.avatar_url || ""} alt={member.full_name} className="object-cover" />
-                          <AvatarFallback className="bg-[#FFD700] text-black text-xl">
+                          <AvatarFallback className="bg-primary text-black text-xl">
                             {member.full_name
                               .split(" ")
                               .map((n: any) => n[0])

@@ -25,7 +25,7 @@ export default async function CreateActivityPage() {
         <p className="text-muted-foreground">Defina uma nova atividade de engajamento para os membros</p>
       </div>
 
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground">Informações da Atividade</CardTitle>
           <CardDescription className="text-muted-foreground">Preencha os detalhes da nova atividade</CardDescription>

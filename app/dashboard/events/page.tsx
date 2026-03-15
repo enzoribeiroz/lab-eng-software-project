@@ -17,21 +17,21 @@ export default async function EventsPage() {
 
   const { data: upcomingEvents } = await supabase
     .from("events")
-    .select("*, event_attendance(user_id, attended)")
+    .select("*, event_attendance(member_id, attended)")
     .in("status", ["scheduled", "ongoing"])
     .gte("event_date", new Date().toISOString())
     .order("event_date", { ascending: true })
 
   const { data: pastEvents } = await supabase
     .from("events")
-    .select("*, event_attendance(user_id, attended)")
+    .select("*, event_attendance(member_id, attended)")
     .eq("status", "completed")
     .lt("event_date", new Date().toISOString())
     .order("event_date", { ascending: false })
     .limit(10)
 
   const getEventStatus = (event: any) => {
-    const userAttendance = event.event_attendance?.find((a: any) => a.user_id === user.id)
+    const userAttendance = event.event_attendance?.find((a: any) => a.member_id === user.id)
     if (userAttendance?.attended) return "attended"
     if (userAttendance) return "registered"
     return "available"
@@ -71,7 +71,7 @@ export default async function EventsPage() {
                 return (
                   <Card
                     key={event.id}
-                    className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20 hover:border-primary/40 transition-colors overflow-hidden"
+                    className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20 hover:border-primary/40 transition-colors overflow-hidden"
                   >
                     {event.image_url && (
                       <div className="relative aspect-square w-full">
@@ -127,7 +127,7 @@ export default async function EventsPage() {
 
                       <div className="flex items-center justify-between pt-4 border-t border-border">
                         <span className="text-lg font-bold text-primary">{event.points_value} pontos</span>
-                        <Button asChild size="sm" className="bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+                        <Button asChild size="sm" className="bg-primary text-black hover:bg-primary/90">
                           <Link href={`/dashboard/events/${event.id}`}>Ver Detalhes</Link>
                         </Button>
                       </div>
@@ -137,7 +137,7 @@ export default async function EventsPage() {
               })}
             </div>
           ) : (
-            <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+            <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
               <CardContent className="py-12 text-center">
                 <p className="text-muted-foreground">Nenhum evento agendado no momento.</p>
               </CardContent>
@@ -152,7 +152,7 @@ export default async function EventsPage() {
               {pastEvents.map((event) => {
                 const status = getEventStatus(event)
                 return (
-                  <Card key={event.id} className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20 overflow-hidden">
+                  <Card key={event.id} className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20 overflow-hidden">
                     <CardContent className="py-4">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4 flex-1">
@@ -203,7 +203,7 @@ export default async function EventsPage() {
               })}
             </div>
           ) : (
-            <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+            <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
               <CardContent className="py-12 text-center">
                 <p className="text-muted-foreground">Nenhum evento anterior encontrado.</p>
               </CardContent>

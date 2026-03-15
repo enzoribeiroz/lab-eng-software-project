@@ -50,12 +50,12 @@ export function CalendarIntegration({ event, onClose }: CalendarIntegrationProps
   if (!isOpen) return null
 
   return (
-    <Card className="bg-white/5 border-[#FFD700]/20">
+    <Card className="bg-white/5 border-primary/20">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
             <CardTitle className="text-white flex items-center gap-2">
-              <Calendar className="h-5 w-5 text-[#FFD700]" />
+              <Calendar className="h-5 w-5 text-primary" />
               Adicionar ao Calendário
             </CardTitle>
             <CardDescription className="text-white/60">
@@ -67,7 +67,7 @@ export function CalendarIntegration({ event, onClose }: CalendarIntegrationProps
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(false)}
-              className="text-white hover:text-[#FFD700]"
+              className="text-white hover:text-primary"
             >
               ×
             </Button>

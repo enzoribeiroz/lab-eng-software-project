@@ -61,7 +61,7 @@ export default async function AttendancePage({
         <p className="text-muted-foreground">Registre a presença dos membros nos eventos</p>
       </div>
 
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground">Selecionar Evento</CardTitle>
           <CardDescription className="text-muted-foreground">Escolha o evento para marcar presenças</CardDescription>
@@ -90,7 +90,7 @@ export default async function AttendancePage({
       </Card>
 
       {selectedEvent && attendees && (
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
           <CardHeader>
             <CardTitle className="text-foreground">{selectedEvent.title}</CardTitle>
             <CardDescription className="text-muted-foreground">

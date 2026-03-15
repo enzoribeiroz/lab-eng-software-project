@@ -19,7 +19,7 @@
 ## EAP Completa
 
 ```
-1.0 IFL Jovem SP – Plataforma Web
+1.0 Plataforma Web
 │
 ├── 1.1 Planejamento e Inicialização
 │   ├── 1.1.1 Elaborar TAP (Termo de Abertura)

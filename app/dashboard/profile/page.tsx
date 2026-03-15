@@ -30,14 +30,14 @@ export default async function ProfilePage() {
   const { data: attendedEvents } = await supabase
     .from("event_attendance")
     .select("*, events(*)")
-    .eq("user_id", user.id)
+    .eq("member_id", user.id)
     .eq("attended", true)
     .order("checked_in_at", { ascending: false })
 
   const { data: activities } = await supabase
     .from("activity_participation")
     .select("*, activities(*)")
-    .eq("user_id", user.id)
+    .eq("member_id", user.id)
     .eq("completed", true)
     .order("completed_at", { ascending: false })
 
@@ -49,7 +49,7 @@ export default async function ProfilePage() {
             <h1 className="text-4xl font-bold text-foreground mb-2">Meu Perfil</h1>
             <p className="text-muted-foreground">Visualize e gerencie suas informações</p>
           </div>
-          <Button asChild className="bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+          <Button asChild className="bg-primary text-black hover:bg-primary/90">
             <Link href="/dashboard/profile/edit">
               <Edit className="mr-2 h-4 w-4" />
               Editar Perfil
@@ -59,7 +59,7 @@ export default async function ProfilePage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20 md:col-span-1">
+        <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20 md:col-span-1">
           <CardHeader>
             <CardTitle className="text-foreground">Informações Pessoais</CardTitle>
           </CardHeader>
@@ -67,7 +67,7 @@ export default async function ProfilePage() {
             <div className="flex flex-col items-center">
               <Avatar className="h-32 w-32 mb-4">
                 <AvatarImage src={profile?.avatar_url || ""} alt={profile?.full_name} className="object-cover" />
-                <AvatarFallback className="bg-[#FFD700] text-black text-3xl">
+                <AvatarFallback className="bg-primary text-black text-3xl">
                   {profile?.full_name
                     .split(" ")
                     .map((n: any) => n[0])
@@ -88,17 +88,17 @@ export default async function ProfilePage() {
 
             <div className="space-y-4 pt-4 border-t border-border">
               <div className="flex items-center gap-3 text-muted-foreground">
-                <Mail className="h-4 w-4 text-[#FFD700]" />
+                <Mail className="h-4 w-4 text-primary" />
                 <span className="text-sm">{profile?.email}</span>
               </div>
               {profile?.phone && (
                 <div className="flex items-center gap-3 text-muted-foreground">
-                  <Phone className="h-4 w-4 text-[#FFD700]" />
+                  <Phone className="h-4 w-4 text-primary" />
                   <span className="text-sm">{formatPhoneForDisplay(profile.phone)}</span>
                 </div>
               )}
               <div className="flex items-center gap-3 text-muted-foreground">
-                <Calendar className="h-4 w-4 text-[#FFD700]" />
+                <Calendar className="h-4 w-4 text-primary" />
                 <span className="text-sm">
                   Membro desde{" "}
                   {new Date(profile?.joined_at || "").toLocaleDateString("pt-BR", {
@@ -108,7 +108,7 @@ export default async function ProfilePage() {
                 </span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
-                <Trophy className="h-4 w-4 text-[#FFD700]" />
+                <Trophy className="h-4 w-4 text-primary" />
                 <span className="text-sm">{profile?.total_points || 0} pontos totais</span>
               </div>
             </div>
@@ -131,7 +131,7 @@ export default async function ProfilePage() {
                 <div className="space-y-2">
                   {profile?.linkedin_url && (
                     <div className="flex items-center gap-2">
-                      <Linkedin className="h-4 w-4 text-[#FFD700]" />
+                      <Linkedin className="h-4 w-4 text-primary" />
                       <a
                         href={profile.linkedin_url}
                         target="_blank"
@@ -144,7 +144,7 @@ export default async function ProfilePage() {
                   )}
                   {profile?.instagram_url && (
                     <div className="flex items-center gap-2">
-                      <Instagram className="h-4 w-4 text-[#FFD700]" />
+                      <Instagram className="h-4 w-4 text-primary" />
                       <a
                         href={profile.instagram_url}
                         target="_blank"
@@ -162,7 +162,7 @@ export default async function ProfilePage() {
         </Card>
 
         <div className="md:col-span-2 space-y-6">
-          <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+          <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
             <CardHeader>
               <CardTitle className="text-foreground">Histórico de Eventos</CardTitle>
               <CardDescription className="text-muted-foreground">Eventos que você participou</CardDescription>
@@ -185,7 +185,7 @@ export default async function ProfilePage() {
                           })}
                         </p>
                       </div>
-                      <span className="text-sm font-medium text-[#FFD700]">+{attendance.points_earned} pts</span>
+                      <span className="text-sm font-medium text-primary">+{attendance.points_earned} pts</span>
                     </div>
                   ))}
                 </div>
@@ -195,7 +195,7 @@ export default async function ProfilePage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+          <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
             <CardHeader>
               <CardTitle className="text-foreground">Atividades Concluídas</CardTitle>
               <CardDescription className="text-muted-foreground">Outras atividades de engajamento</CardDescription>
@@ -218,7 +218,7 @@ export default async function ProfilePage() {
                           })}
                         </p>
                       </div>
-                      <span className="text-sm font-medium text-[#FFD700]">+{participation.points_earned} pts</span>
+                      <span className="text-sm font-medium text-primary">+{participation.points_earned} pts</span>
                     </div>
                   ))}
                 </div>

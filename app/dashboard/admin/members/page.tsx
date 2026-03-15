@@ -39,7 +39,7 @@ export default async function AdminMembersPage() {
         <p className="text-muted-foreground">Visualize e gerencie informações dos membros</p>
       </div>
 
-      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-[#FFD700]/20">
+      <Card className="bg-card border-primary/20 dark:bg-white/5 dark:border-primary/20">
         <CardHeader>
           <CardTitle className="text-foreground">Todos os Membros</CardTitle>
           <CardDescription className="text-muted-foreground">{allMembers?.length || 0} membros cadastrados</CardDescription>
@@ -54,7 +54,7 @@ export default async function AdminMembersPage() {
                 <div className="flex items-center gap-4">
                   <Avatar className="h-12 w-12">
                     <AvatarImage src={member.avatar_url || ""} alt={member.full_name} className="object-cover" />
-                    <AvatarFallback className="bg-[#FFD700] text-black">
+                    <AvatarFallback className="bg-primary text-black">
                       {member.full_name
                         .split(" ")
                         .map((n: string) => n[0])
@@ -77,14 +77,14 @@ export default async function AdminMembersPage() {
                     instituteAreas={member.member_institute_areas}
                   />
                   <div className="text-right">
-                    <p className="text-lg font-bold text-[#FFD700]">{member.total_points}</p>
+                    <p className="text-lg font-bold text-primary">{member.total_points}</p>
                     <p className="text-xs text-muted-foreground">pontos</p>
                   </div>
                   <Button
                     asChild
                     size="sm"
                     variant="outline"
-                    className="border-[#FFD700]/40 text-blue-500 bg-transparent"
+                    className="border-primary/40 text-blue-500 bg-transparent"
                   >
                     <Link href={`/dashboard/admin/members/${member.id}/edit`}>
                       <Edit className="mr-1 h-3 w-3" />

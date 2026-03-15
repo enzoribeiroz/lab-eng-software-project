@@ -11,13 +11,13 @@ export default async function ErrorPage({
   const params = await searchParams
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[#001f3f] via-[#003366] to-black p-6">
+    <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[var(--brand-secondary)] via-[var(--brand-tertiary)] to-[var(--brand-gradient-end)] p-6">
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
           <Logo size="lg" showText={true} className="justify-center" href="" />
         </div>
         
-        <Card className="border-[#FFD700]/20">
+        <Card className="border-primary/20">
           <CardHeader>
             <CardTitle className="text-2xl">Desculpe, algo deu errado.</CardTitle>
           </CardHeader>
@@ -27,7 +27,7 @@ export default async function ErrorPage({
             ) : (
               <p className="text-sm text-muted-foreground">Ocorreu um erro não especificado.</p>
             )}
-            <Button asChild className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90">
+            <Button asChild className="w-full bg-primary text-black hover:bg-primary/90">
               <Link href="/auth/login">Voltar para Login</Link>
             </Button>
           </CardContent>

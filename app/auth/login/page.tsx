@@ -49,13 +49,13 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[#001f3f] via-[#003366] to-black p-6">
+    <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[var(--brand-secondary)] via-[var(--brand-tertiary)] to-[var(--brand-gradient-end)] p-6">
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
           <Logo size="lg" showText={true} className="justify-center" href="" />
         </div>
 
-        <Card className="border-[#FFD700]/20">
+        <Card className="border-primary/20">
           <CardHeader>
             <CardTitle className="text-2xl">Entrar</CardTitle>
             <CardDescription>Entre com seu email para acessar sua conta</CardDescription>
@@ -87,7 +87,7 @@ export default function LoginPage() {
                 {error && <p className="text-sm text-destructive">{error}</p>}
                 <Button
                   type="submit"
-                  className="w-full bg-[#FFD700] text-black hover:bg-[#FFD700]/90"
+                  className="w-full bg-primary text-black hover:bg-primary/90"
                   disabled={isLoading}
                 >
                   {isLoading ? "Entrando..." : "Entrar"}
@@ -97,7 +97,7 @@ export default function LoginPage() {
                 <div>
                   <Link
                     href="/auth/forgot-password"
-                    className="text-[#FFD700] underline underline-offset-4 hover:text-[#FFD700]/80"
+                    className="text-primary underline underline-offset-4 hover:text-primary/80"
                   >
                     Esqueceu sua senha?
                   </Link>
@@ -106,7 +106,7 @@ export default function LoginPage() {
                   Não tem uma conta?{" "}
                   <Link
                     href="/auth/sign-up"
-                    className="text-[#FFD700] underline underline-offset-4 hover:text-[#FFD700]/80"
+                    className="text-primary underline underline-offset-4 hover:text-primary/80"
                   >
                     Cadastre-se
                   </Link>
