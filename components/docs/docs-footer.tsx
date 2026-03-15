@@ -11,7 +11,7 @@ export function DocsFooter() {
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <Logo
-            href="/docs"
+            href="/"
             size="md"
             showText
             className="[&_span]:text-white [&_span:last-child]:text-white/70"

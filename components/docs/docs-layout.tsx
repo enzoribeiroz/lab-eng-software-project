@@ -6,19 +6,46 @@ import { DocsHeader } from "@/components/docs/docs-header"
 import { DocsFooter } from "@/components/docs/docs-footer"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { ArrowLeft, FileText, Calendar, ClipboardList, FolderTree, Layers } from "lucide-react"
+import {
+  ArrowLeft,
+  FileText,
+  Calendar,
+  ClipboardList,
+  FolderTree,
+  Layers,
+  BookOpen,
+} from "lucide-react"
 import { ExportPdfButton } from "./export-pdf-button"
+import type { DocEntry } from "@/lib/docs-config"
 
-const docNavItems = [
-  { href: "/docs", label: "Índice", icon: FileText },
-  { href: "/docs/tap", label: "TAP / GDD1", icon: FileText },
-  { href: "/docs/cronograma", label: "Cronograma (Gantt)", icon: Calendar },
-  { href: "/docs/escopo", label: "Declaração de Escopo", icon: ClipboardList },
-  { href: "/docs/eap", label: "EAP / WBS", icon: FolderTree },
-  { href: "/docs/entrega2", label: "Requisitos, Modelagem e Arquitetura", icon: Layers },
-]
+const ICON_MAP = {
+  FileText,
+  Calendar,
+  ClipboardList,
+  FolderTree,
+  Layers,
+  BookOpen,
+} as const
 
-export function DocsLayout({ children }: { children: React.ReactNode }) {
+function getNavItems(docs: DocEntry[]) {
+  return [
+    { href: "/docs", label: "Índice", icon: FileText },
+    ...docs.map((d) => ({
+      href: `/docs/${d.slug}`,
+      label: d.title,
+      icon: ICON_MAP[d.icon as keyof typeof ICON_MAP] ?? FileText,
+    })),
+  ]
+}
+
+export function DocsLayout({
+  children,
+  docs,
+}: {
+  children: React.ReactNode
+  docs: DocEntry[]
+}) {
+  const docNavItems = getNavItems(docs)
   return (
     <div className="min-h-screen" style={{ backgroundColor: "var(--brand-secondary)" }}>
       <DocsHeader />

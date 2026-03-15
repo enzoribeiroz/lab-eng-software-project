@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Logo } from "@/components/logo"
 
-export function DocsHeader() {
+export function LandingHeader() {
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 backdrop-blur-md"
@@ -17,13 +17,21 @@ export function DocsHeader() {
           showText
           className="[&_span]:!text-white [&_span:last-child]:!text-white/80"
         />
-        <Button
-          asChild
-          className="text-black"
-          style={{ backgroundColor: "var(--brand-primary)" }}
-        >
-          <Link href="/auth/login">Entrar</Link>
-        </Button>
+        <nav className="flex items-center gap-4">
+          <Link
+            href="/docs"
+            className="text-sm font-medium text-white/80 transition hover:text-white"
+          >
+            Documentação
+          </Link>
+          <Button
+            asChild
+            className="border-0 text-black hover:opacity-90"
+            style={{ backgroundColor: "var(--brand-primary)", color: "#000" }}
+          >
+            <Link href="/auth/login">Entrar</Link>
+          </Button>
+        </nav>
       </div>
     </header>
   )

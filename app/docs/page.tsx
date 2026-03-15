@@ -1,41 +1,28 @@
 import Link from "next/link"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { FileText, Calendar, ClipboardList, FolderTree, Layers, ArrowRight } from "lucide-react"
+import { getDocsList } from "@/lib/docs-config"
+import {
+  FileText,
+  Calendar,
+  ClipboardList,
+  FolderTree,
+  Layers,
+  BookOpen,
+  ArrowRight,
+} from "lucide-react"
 
-const docs = [
-  {
-    href: "/docs/tap",
-    title: "TAP – Termo de Abertura do Projeto / GDD1",
-    description: "Objetivos, escopo e critérios de sucesso. Foco em acessibilidade.",
-    icon: FileText,
-  },
-  {
-    href: "/docs/cronograma",
-    title: "Cronograma (Gantt)",
-    description: "Cronograma inicial com marcos, diagrama de Gantt e detalhamento das atividades.",
-    icon: Calendar,
-  },
-  {
-    href: "/docs/escopo",
-    title: "Declaração de Escopo",
-    description: "Escopo do produto, critérios de aceitação, entregáveis e glossário.",
-    icon: ClipboardList,
-  },
-  {
-    href: "/docs/eap",
-    title: "EAP / WBS",
-    description: "Estrutura Analítica do Projeto com breakdown completo das tarefas.",
-    icon: FolderTree,
-  },
-  {
-    href: "/docs/entrega2",
-    title: "Requisitos, Modelagem e Arquitetura",
-    description: "Requisitos funcionais e não funcionais, DCU, DCL, diagramas e justificativa da arquitetura.",
-    icon: Layers,
-  },
-]
+const ICON_MAP = {
+  FileText,
+  Calendar,
+  ClipboardList,
+  FolderTree,
+  Layers,
+  BookOpen,
+} as const
 
 export default function DocsIndexPage() {
+  const docs = getDocsList()
+
   return (
     <div className="space-y-8">
       <div>
@@ -43,29 +30,33 @@ export default function DocsIndexPage() {
           Documentação de Planejamento
         </h1>
         <p className="mt-2 text-white/70">
-          Plataforma Educacional Acessível – Grupo ABE. Documentos de escopo e planejamento. Foco em acessibilidade inclusiva.
+          Plataforma Educacional Acessível – Grupo ABE. Documentos de escopo e planejamento. Foco em
+          acessibilidade inclusiva.
         </p>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
-        {docs.map((doc) => (
-          <Link key={doc.href} href={doc.href} className="block">
-            <Card className="h-full border-white/10 bg-white/5 transition hover:border-primary/30 hover:bg-white/10">
-              <CardHeader className="flex flex-row items-start gap-4">
-                <div className="rounded-lg bg-primary/20 p-3">
-                  <doc.icon className="h-6 w-6 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <CardTitle className="text-white">{doc.title}</CardTitle>
-                  <CardDescription className="mt-1 text-white/70">
-                    {doc.description}
-                  </CardDescription>
-                </div>
-                <ArrowRight className="h-5 w-5 shrink-0 text-white/50" />
-              </CardHeader>
-            </Card>
-          </Link>
-        ))}
+        {docs.map((doc) => {
+          const Icon = ICON_MAP[doc.icon as keyof typeof ICON_MAP] ?? FileText
+          return (
+            <Link key={doc.slug} href={`/docs/${doc.slug}`} className="block">
+              <Card className="h-full border-white/10 bg-white/5 transition hover:border-primary/30 hover:bg-white/10">
+                <CardHeader className="flex flex-row items-start gap-4">
+                  <div className="rounded-lg bg-primary/20 p-3">
+                    <Icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-white">{doc.title}</CardTitle>
+                    <CardDescription className="mt-1 text-white/70">
+                      {doc.description ?? ""}
+                    </CardDescription>
+                  </div>
+                  <ArrowRight className="h-5 w-5 shrink-0 text-white/50" />
+                </CardHeader>
+              </Card>
+            </Link>
+          )
+        })}
       </div>
 
       <div className="rounded-lg border border-white/10 bg-white/5 p-6">
