@@ -15,6 +15,7 @@ Documentos de definição de escopo e planejamento do projeto. **Foco em acessib
 | [Declaração de Escopo](./Declaracao-de-Escopo.md) | Escopo do produto (incluído/excluído), critérios de aceitação e entregáveis |
 | [EAP / WBS](./EAP-WBS.md) | Estrutura Analítica do Projeto com breakdown completo |
 | [**Requisitos, Modelagem e Arquitetura**](./Requisitos-Modelagem-Arquitetura.md) | Requisitos funcionais e não funcionais, DCU, DCL, diagramas de arquitetura e justificativa |
+| [**Personas**](./Personas.md) | Personas de usuário: Maria (Surda), João (Neurodivergente), Ana (Membro) e Carlos (Admin) |
 
 ---
 

@@ -44,6 +44,12 @@ const DOC_META: Record<string, Omit<DocEntry, "filename">> = {
     description: "Requisitos funcionais e não funcionais, DCU, DCL, diagramas e justificativa da arquitetura.",
     icon: "Layers",
   },
+  Personas: {
+    slug: "personas",
+    title: "Personas",
+    description: "Personas de usuário: Maria (Surda), João (Neurodivergente), Ana (Membro) e Carlos (Admin).",
+    icon: "Users",
+  },
   README: {
     slug: "readme",
     title: "Visão Geral",

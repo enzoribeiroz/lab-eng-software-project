@@ -27,25 +27,37 @@ export const siteConfig = {
     { href: "/dashboard/members", label: "Membros", icon: "Users" },
   ] as { href: string; label: string; icon: string }[],
 
-  // ─── Color schema ────────────────────────────────────────────────────────
-  /** All frontend colors – customize here; injected as CSS variables */
-  colors: {
-    /** Primary accent (buttons, highlights, icons) */
-    primary: "#FFD700",
-    /** Secondary / background (header, footer, sidebar, nav) */
-    secondary: "#001f3f",
-    /** Tertiary (gradient middle) */
-    tertiary: "#003366",
-    /** Gradient end (auth/dashboard backgrounds) */
-    gradientEnd: "#000000",
-    /** Text on dark backgrounds (nav, docs) */
-    onDark: "#ffffff",
-    /** Primary foreground (text on primary buttons) */
-    primaryForeground: "#000000",
-    /** Card border in dark mode */
-    cardBorder: "#FFD70033",
-    /** Avatar fallback background */
-    avatarBg: "#FFD700",
+  // ─── Color schemas ───────────────────────────────────────────────────────
+  /** Available color schemes. Set activeColorScheme to switch. */
+  colorSchemes: {
+    /** Gold/navy – corporate, premium */
+    default: {
+      primary: "#FFD700",
+      secondary: "#001f3f",
+      tertiary: "#003366",
+      gradientEnd: "#000000",
+      onDark: "#ffffff",
+      primaryForeground: "#000000",
+      cardBorder: "#FFD70033",
+      avatarBg: "#FFD700",
+    },
+    /** Emerald/teal – fresh, natural */
+    light: {
+      primary: "#10b981",
+      secondary: "#064e3b",
+      tertiary: "#047857",
+      gradientEnd: "#022c22",
+      onDark: "#ecfdf5",
+      primaryForeground: "#ffffff",
+      cardBorder: "#10b98133",
+      avatarBg: "#10b981",
+    },
+  },
+  /** Active schema key: "default" | "light" */
+  activeColorScheme: "default" as "default" | "light",
+  /** Resolved colors (active schema) – used by BrandStyles */
+  get colors() {
+    return this.colorSchemes[this.activeColorScheme]
   },
 
   // ─── Social media ──────────────────────────────────────────────────────

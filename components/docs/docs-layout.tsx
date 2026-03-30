@@ -14,6 +14,7 @@ import {
   FolderTree,
   Layers,
   BookOpen,
+  Users,
 } from "lucide-react"
 import { ExportPdfButton } from "./export-pdf-button"
 import type { DocEntry } from "@/lib/docs-config"
@@ -25,6 +26,7 @@ const ICON_MAP = {
   FolderTree,
   Layers,
   BookOpen,
+  Users,
 } as const
 
 function getNavItems(docs: DocEntry[]) {
