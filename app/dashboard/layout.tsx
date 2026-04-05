@@ -3,6 +3,8 @@ import { redirect } from "next/navigation"
 import { createClient } from "@/lib/supabase/server"
 import { DashboardSidebar } from "@/components/dashboard-sidebar"
 
+export const dynamic = "force-dynamic"
+
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   console.log("[v0] Dashboard layout loading")
 

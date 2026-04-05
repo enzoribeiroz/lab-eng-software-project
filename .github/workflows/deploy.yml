@@ -1,0 +1,30 @@
+name: Deploy
+
+# Manual CD: Actions → Deploy → Run workflow. Optional hook step runs when DEPLOY_HOOK_URL is set.
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    env:
+      DEPLOY_HOOK_URL: ${{ secrets.DEPLOY_HOOK_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Production build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL || 'https://example.supabase.co' }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'ci-placeholder-anon-key' }}
+
+      - name: Invoke deploy hook
+        if: env.DEPLOY_HOOK_URL != ''
+        run: curl -fsS -X POST "$DEPLOY_HOOK_URL"
